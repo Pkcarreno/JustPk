@@ -5,7 +5,7 @@ $(document).ready(function(){
   ajustesIniciales();
 
   function ajustesIniciales(){
-    $("section#headTitle").css({"margin-top": height - 80 + "px"});
+    $("section#scrolldown").css({"margin-top": height - 80 + "px"});
   }
 
   $(document).scroll(function(){
