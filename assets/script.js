@@ -1,17 +1,15 @@
-$(document).ready(function(){
+function onFullCharge(){
 
   var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-  ajustesIniciales();
+  initialSettings();
 
-  function ajustesIniciales(){
+  function initialSettings(){
     document.getElementById("headTitle").style.height = height - 20  + "px";
   }
 
-  
-  
   document.onscroll = function(){
-    var scrollTop = $(this).scrollTop();
+    var scrollTop = document.documentElement.scrollTop || document.body;
     var pixels = scrollTop / 70;
     var header = document.getElementById("header");
   
@@ -21,4 +19,4 @@ $(document).ready(function(){
       header.style.backgroundPosition = "center -" + pixels * 10 + "px";
     }
   };
-});
+}
