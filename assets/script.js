@@ -1,25 +1,24 @@
 $(document).ready(function(){
 
-  var height = $(window).height();
+  var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
   ajustesIniciales();
 
   function ajustesIniciales(){
-    $("section#scrolldown").css({"margin-top": height - 80 + "px"});
+    document.getElementById("headTitle").style.height = height - 20  + "px";
   }
 
-  $(document).scroll(function(){
+  
+  
+  document.onscroll = function(){
     var scrollTop = $(this).scrollTop();
     var pixels = scrollTop / 70;
-
+    var header = document.getElementById("header");
+  
     if(scrollTop < height){
-      $("header").css({
-        "-webkit-filter": "blur(" + pixels + "px)",
-        "-moz-filter": "blur(" + pixels + "px)",
-        "-o-filter": "blur(" + pixels + "px)",
-        "-ms-filter": "blur(" + pixels + "px)",
-        "background-position": "center -" + pixels * 10 + "px"
-      });
+      header.style.filter = "blur(" + pixels + "px)";
+      header.style.WebkitFilter = "blur(" + pixels + "px)";
+      header.style.backgroundPosition = "center -" + pixels * 10 + "px";
     }
-  });
+  };
 });

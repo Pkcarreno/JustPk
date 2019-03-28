@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Lora|Roboto:300,400');
 *{
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: 'Roboto', sans-serif;
 }
 .lora{
   font-family: 'Lora', serif;
+}
+.flexbox{
+  display: flex;
+}
+.flexCenter{
+  justify-content: center;
+  align-items: center;
+}
+.flexInRow{
+  flex-direction: row;
+}
+.flexInColumn{
+  flex-direction: column;
 }
 header{
   position: fixed;
@@ -34,18 +47,15 @@ section#headerMe{
   overflow: hidden;
 }
 section#headTitle{
-  width: 100%;
+  margin: 0px;
+  padding: opx;
+  flex-basis: 100%;
   overflow: hidden;
 }
 section#scrolldown{
-  margin: auto;
-  width: 200px;
-  height: 60px;
-}
-p#title{
-  text-align: center;
-  font-size: 1.5em;
-  color: white;
+  align-self: flex-end;
+  margin: 0px;
+  padding: opx;
 }
 section#body{
   width: 100%;
