@@ -36,7 +36,10 @@
   align-items: center;
 }
 .flexLeft{
-  justify-content: flex-end;
+  justify-content: left;
+}
+.flexRight{
+  justify-content: right;
 }
 .flexInRow{
   flex-direction: row;
@@ -93,7 +96,11 @@ section#body1Box1{
   padding-top: 12vh;
   min-height: 110vh;
   justify-content: center;
-  border-bottom: 1vh solid #ffa883;
+  border-right: 1vh solid #ffa883;
+}
+section#body1Inter{
+  background-image: linear-gradient(red, yellow);
+  min-height: 10vh;
 }
 p#body1Box1Title{
   font-size: 7vw;
@@ -103,6 +110,10 @@ p#body1Box1P{
   font-size: 1.7vw;
   flex-basis: 80%;
 }
+section#map{
+  flex-basis: 50%;
+  min-height: 110vh;
+}
 section#body1Box2{
   flex-basis: 100%;
   background-color: #fde3cb;
@@ -110,4 +121,21 @@ section#body1Box2{
   margin-top: 1vh;
   min-height: 110vh;
   justify-content: center;
+}
+section#body2{
+  background-image: -webkit-linear-gradient(#faf2e8, #6fc7e1);
+  flex-basis: 100%;
+  min-height: 50vh;
+  z-index: 0;
+}
+section#body2Inner{
+  background-color: #ffa883;
+  flex-basis: 100%;
+  min-height: 50vh;
+  z-index: 1;
+}
+p#body2Backgroundeffect{
+  color: -webkit-linear-gradient(#faf2e8, #6fc7e1);
+  text-align: justify;
+  z-index: 1;
 }
