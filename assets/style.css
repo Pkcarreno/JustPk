@@ -7,12 +7,30 @@
 .lora{
   font-family: 'Lora', serif;
 }
+.c1{
+  color: #ffa883;
+}
+.c2{
+  color: #fde3cb;
+}
+.c3{
+  color: #626c70;
+}
+.c4{
+  color: #faf2e8;
+}
+.c5{
+  color: #6fc7e1;
+}
 .flexbox{
   display: flex;
 }
 .flexCenter{
   justify-content: center;
   align-items: center;
+}
+.flexLeft{
+  justify-content: flex-end;
 }
 .flexInRow{
   flex-direction: row;
@@ -58,8 +76,12 @@ section#scrolldown{
   padding: opx;
 }
 section#body{
-  width: 100%;
+  flex-basis: 100%;
   height: 800px;
   margin-top: 20px;
-  background-color: white;
+}
+section#body1{
+  flex-basis: 50%;
+  background-color: #fde3cb;
+  height: 800px;
 }
