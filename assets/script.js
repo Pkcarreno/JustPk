@@ -2,11 +2,11 @@ function onFullCharge(){
 
   var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-  initialSettings();
+  /*initialSettings();
 
   function initialSettings(){
-    document.getElementById("headTitle").style.height = height - 20  + "px";
-  }
+    //a la espera de algun ajuste inicial
+  }*/
 
   document.onscroll = function(){
     var scrollTop = document.documentElement.scrollTop || document.body;
