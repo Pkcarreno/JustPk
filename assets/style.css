@@ -123,19 +123,50 @@ section#body1Box2{
   justify-content: center;
 }
 section#body2{
-  background-image: -webkit-linear-gradient(#faf2e8, #6fc7e1);
-  flex-basis: 100%;
-  min-height: 50vh;
-  z-index: 0;
-}
-section#body2Inner{
   background-color: #ffa883;
   flex-basis: 100%;
   min-height: 50vh;
-  z-index: 1;
+  overflow: hidden;
+
 }
-p#body2Backgroundeffect{
-  color: -webkit-linear-gradient(#faf2e8, #6fc7e1);
-  text-align: justify;
-  z-index: 1;
+.body2Backgroundeffect1{
+  background: -webkit-linear-gradient(#faf2e8,#6fc7e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2vw;
+  transform: rotate(-45deg);
+
+
+  /*animation*/
+  animation-duration: 7s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.body2Backgroundeffect2{
+  background: -webkit-linear-gradient(#faf2e8,#6fc7e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2vw;
+  transform: rotate(135deg);
+
+  /*animation*/
+  animation-duration: 7s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+section#body2Animation{
+  z-index: 0;
+  flex-basis: 400%;
+  height: 400vw;
+}
+@keyframes slidein {
+  from {
+    transform: translate(100vw,-100vh) rotate(-45deg);
+  }
+
+  to {
+    transform: translate(-100vw,100vh) rotate(-45deg);
+  }
 }
