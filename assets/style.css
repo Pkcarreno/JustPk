@@ -98,10 +98,6 @@ section#body1Box1{
   justify-content: center;
   border-right: 1vh solid #ffa883;
 }
-section#body1Inter{
-  background-image: linear-gradient(red, yellow);
-  min-height: 10vh;
-}
 p#body1Box1Title{
   font-size: 7vw;
 }
@@ -124,8 +120,9 @@ section#body1Box2{
 }
 section#body2{
   background-color: #ffa883;
-  flex-basis: 100%;
+  flex-basis: 100vw;
   min-height: 50vh;
+  overflow: hidden;
   
 
 }
@@ -137,27 +134,27 @@ section#body2{
   transform: rotate(-45deg);
   margin: 0px;
   padding: 0px;
-  position: absolute;
+
 
 
   /*animation*/
-  animation-duration: 3s;
+  animation-duration: 8s;
   animation-name: slidein;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 section#body2Animation{
-  z-index: 2;
+  z-index: 0;
   flex-basis: 150vw;
   height: 80vh;
-  background-color: black
+  
 }
 @keyframes slidein {
   from {
-    transform: translate(20vw,-20vh) rotate(-70deg);
+    transform: translate(20vw,-10vw) rotate(-45deg);
   }
 
   to {
-    transform: translate(2vw,80vh) rotate(-70deg);
+    transform: translate(-30vw,40vw) rotate(-45deg);
   }
 }
