@@ -149,12 +149,5 @@ section#body2Animation{
   height: 80vh;
   
 }
-@keyframes slidein {
-  from {
-    transform: translate(20vw,-10vw) rotate(-45deg);
-  }
 
-  to {
-    transform: translate(-30vw,40vw) rotate(-45deg);
-  }
 }
