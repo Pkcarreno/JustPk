@@ -2,12 +2,12 @@ function onFullCharge(){
 
   var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   
-  initialSettings();
+ /* initialSettings();
 
   function initialSettings(){
     //a la espera de algun ajuste inicial
     document.getElementById("headerTitle").style.height = height + "vh";
-  }
+  }*/
 
   document.onscroll = function(){
     var scrollTop = document.documentElement.scrollTop || document.body;
