@@ -30,6 +30,10 @@
   min-width: 100vw;
   max-width: 100vw;
 }
+.halfmaxminW{
+  min-width: 50vw;
+  max-width: 50vw;
+}
 .flexbox{
   display: flex;
 }
@@ -43,6 +47,10 @@
   justify-content: center;
   align-items: center;
 }
+.centerflexItem{
+  justify-items: center;
+  align-self: center;
+}
 .flexLeft{
   justify-content: left;
 }
@@ -54,6 +62,10 @@
 }
 .flexInColumn{
   flex-direction: column;
+}
+.headerTitle{
+  color: white;
+  font-size: 20vw;
 }
 header{
   position: fixed;
@@ -86,11 +98,19 @@ section#headTitle{
   padding: opx;
   flex-basis: 100%;
   overflow: hidden;
+  z-index: -1;
+}
+div#title{
+  
+}
+p#leftTitle{
+  
+}
+p#rightTitle{
+  
 }
 div#scrolldown{
   align-self: flex-end;
-  margin: 0px;
-  padding: opx;
 }
 section#body{
   flex-basis: 100%;
@@ -100,6 +120,7 @@ section#body2{
   background-color: #ffa883;
   flex-basis: 100vw;
   min-height: 50vh;
+  max-height: 50vh;
   overflow: hidden;
 }
 .body2Backgroundeffect1{
