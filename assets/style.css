@@ -65,7 +65,7 @@
 }
 .headerTitle{
   color: white;
-  font-size: 20vw;
+  font-size: 20vmax;
 }
 header{
   position: fixed;
@@ -99,6 +99,7 @@ section#headTitle{
   flex-basis: 100%;
   overflow: hidden;
   z-index: -1;
+  background: -webkit-gradient(90deg, #626c700009,#626c70);
 }
 div#title{
   
@@ -115,6 +116,15 @@ div#scrolldown{
 section#body{
   flex-basis: 100%;
   margin-top: 2vh;
+}
+section#body1{
+  background-color: #ffa88379;
+  min-height: 110vh;
+  max-height: 110vh;
+  overflow: hidden;
+}
+p#aboutTitle{
+  font-size: 5vmax;
 }
 section#body2{
   background-color: #ffa883;
