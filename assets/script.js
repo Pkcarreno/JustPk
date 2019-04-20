@@ -1,6 +1,6 @@
 function onFullCharge() {
   window.addEventListener('scroll', function () {
-    var body = document.getElementById('body');
+    const body = document.getElementById('body');
     if(!elementTouchTop(body).top) {
       headerblur();
     }
