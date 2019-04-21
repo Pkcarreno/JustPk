@@ -32,9 +32,6 @@ function elementTouchTop(element) { //returns true or false when the element top
   }
   if(box.bottom <= 0) {
     bottom = true;
-<<<<<<< HEAD
-  }
-=======
   }
 
   return{
@@ -69,9 +66,4 @@ function abElementTouchTop(elementA, elementB) { //returns true or false if elem
     upBottom,
     downBottom
   }
-<<<<<<< HEAD
 }
->>>>>>> 9cc4ed7... -desplazamiento de titulo corregido y condicionado
-=======
-}
->>>>>>> 9cc4ed7... -desplazamiento de titulo corregido y condicionado
