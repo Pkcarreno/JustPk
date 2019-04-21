@@ -32,4 +32,42 @@ function elementTouchTop(element) { //returns true or false when the element top
   }
   if(box.bottom <= 0) {
     bottom = true;
+<<<<<<< HEAD
   }
+=======
+  }
+
+  return{
+    top,
+    bottom
+  }
+}
+function abElementTouchTop(elementA, elementB) { //returns true or false if element a and b touch the top and bottom border in each combination each other
+  let boxA = elementA.getBoundingClientRect();
+  let boxB = elementB.getBoundingClientRect();
+  let upTop = false;
+  let downTop = false;
+  let upBottom = false;
+  let downBottom = false;
+
+  if (boxA.top >= boxB.top) { //element a top line and element b top line
+    upTop = true;
+  }
+  if (boxA.bottom >= boxB.top) { //element a bottom line and element b top line
+    downTop = true;
+  }
+  if (boxA.top >= boxB.bottom) { //element a top line and element b bottom line
+    upBottom = true;
+  }
+  if (boxA.bottom >= boxB.bottom) { //element a bottom line and element b bottom line
+    downBottom = true;
+  }
+
+  return {
+    upTop,
+    downTop,
+    upBottom,
+    downBottom
+  }
+}
+>>>>>>> 9cc4ed7... -desplazamiento de titulo corregido y condicionado
