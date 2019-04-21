@@ -21,7 +21,7 @@ function headerblur(rate) {
 }
 function titleDisplacement(rate) {
   const target = document.querySelector("#title");
-  target.style.transform = "translate3d(0px," + rate * 15 + "px, 0px)";
+  target.style.transform = "translate(0px," + rate * 15 + "px)";
 }
 function elementTouchTop(element) { //returns true or false when the element top line or the element bottom line touch the top viewport
   let box = element.getBoundingClientRect();
