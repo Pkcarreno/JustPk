@@ -64,7 +64,6 @@
   flex-direction: column;
 }
 .headerTitle{
-  color: white;
   font-size: 20vmax;
 }
 .fixed{
@@ -112,7 +111,7 @@ p#leftTitle{
 p#rightTitle{
   
 }
-div#scrolldown{
+div#downArrow{
   align-self: flex-end;
 }
 section#body{
