@@ -1,41 +1,33 @@
-function onFullCharge(){
-
-  var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-  var titleScrollTopBuffer;
-    var titlePixels;
- /* initialSettings();
-
-  function initialSettings(){
-    //a la espera de algun ajuste inicial
-    document.getElementById("headerTitle").style.height = height + "vh";
-  }*/
-
-  document.onscroll = function(){
-    var scrollTop = document.documentElement.scrollTop || document.body;
-    var scrollDown = document.documentElement.scrollDown ;
-    var pixels = scrollTop / 70;
-    var header = document.getElementById("header");
-
-    var title = document.getElementById("title");
-    var titleleft = document.getElementById("leftTitle");
-    var titleScrollTop = titleleft.scrollTop;
-    
-
-    if(scrollTop < height){
-      header.style.filter = "blur(" + pixels + "px)";
-      header.style.WebkitFilter = "blur(" + pixels + "px)";
-      header.style.backgroundPosition = "center -" + pixels * 15 + "px";
-      console.log(titlePixels);
-
-      if(scrollTop > scrollDown){
-        titlePixels += 1;
-
-      }else{
-        titlePixels -= 1;
-
-      }
-      title.style.marginTop = titlePixels + "%";
-      
+function onFullCharge() {
+  window.addEventListener('scroll', function () {
+    const body = document.getElementById('body');
+    if(!elementTouchTop(body).top) {
+      headerblur();
     }
-  };
+  });
+}
+function headerblur() {
+  const target = document.querySelector('header');
+  var scrolled = window.pageYOffset;
+  var rate = scrolled * 0.05;
+
+  target.style.backgroundPosition = "center -" + rate + "px";
+  target.style.filter = "blur(" + rate + "px)";
+}
+function elementTouchTop(element) { //returns true or false when the element top line or the element bottom line touch the top viewport
+  var box = element.getBoundingClientRect();
+  var top = false; 
+  var bottom = false;
+
+  if(box.top <= 0) {
+    top = true;
+  }
+  if(box.bottom <= 0) {
+    bottom = true;
+  }
+
+  return{
+    top,
+    bottom
+  }
 }

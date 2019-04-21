@@ -67,6 +67,9 @@
   color: white;
   font-size: 20vmax;
 }
+.fixed{
+  position: fixed;
+}
 header{
   position: fixed;
   width: 100%;
@@ -99,10 +102,9 @@ section#headTitle{
   flex-basis: 100%;
   overflow: hidden;
   z-index: -1;
-  background: -webkit-gradient(90deg, #626c700009,#626c70);
 }
 div#title{
-  
+
 }
 p#leftTitle{
   
