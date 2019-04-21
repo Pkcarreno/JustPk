@@ -1,4 +1,5 @@
 function onFullCharge() {
+<<<<<<< HEAD
   window.addEventListener("scroll", function () {
     const body = document.querySelector("#body");
     const title = document.querySelector("#title");
@@ -37,6 +38,33 @@ function elementTouchTop(element) { //returns true or false when the element top
   return{
     top,
     bottom
+=======
+  window.addEventListener('scroll', function () {
+    const body = document.getElementById('body');
+    if(!elementTouchTop(body).top) {
+      headerblur();
+    }
+  });
+}
+function headerblur() {
+  const target = document.querySelector('header');
+  var scrolled = window.pageYOffset;
+  var rate = scrolled * 0.05;
+
+  target.style.backgroundPosition = "center -" + rate + "px";
+  target.style.filter = "blur(" + rate + "px)";
+}
+function elementTouchTop(element) { //returns true or false when the element top line or the element bottom line touch the top viewport
+  var box = element.getBoundingClientRect();
+  var top = false; 
+  var bottom = false;
+
+  if(box.top <= 0) {
+    top = true;
+  }
+  if(box.bottom <= 0) {
+    bottom = true;
+>>>>>>> 7d29b4a8620ee609488ab62ef2b058806dde34b1
   }
 }
 function abElementTouchTop(elementA, elementB) { //returns true or false if element a and b touch the top and bottom border in each combination each other
@@ -47,6 +75,7 @@ function abElementTouchTop(elementA, elementB) { //returns true or false if elem
   let upBottom = false;
   let downBottom = false;
 
+<<<<<<< HEAD
   if (boxA.top >= boxB.top) { //element a top line and element b top line
     upTop = true;
   }
@@ -67,3 +96,10 @@ function abElementTouchTop(elementA, elementB) { //returns true or false if elem
     downBottom
   }
 }
+=======
+  return{
+    top,
+    bottom
+  }
+}
+>>>>>>> 7d29b4a8620ee609488ab62ef2b058806dde34b1

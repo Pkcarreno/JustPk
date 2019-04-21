@@ -1,0 +1,9 @@
+@keyframes slidein {
+  from {
+    transform: translate(0vw,-26vw) rotate(-45deg);
+  }
+
+  to {
+    transform: translate(-50vw,24vw) rotate(-45deg);
+  }
+}

@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 {
   "folders": [
     {
       "path": "."
     }
   ]
+=======
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+>>>>>>> 7d29b4a8620ee609488ab62ef2b058806dde34b1
 }

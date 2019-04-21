@@ -64,6 +64,10 @@
   flex-direction: column;
 }
 .headerTitle{
+<<<<<<< HEAD
+=======
+  color: white;
+>>>>>>> 7d29b4a8620ee609488ab62ef2b058806dde34b1
   font-size: 20vmax;
 }
 .fixed{
@@ -111,7 +115,11 @@ p#leftTitle{
 p#rightTitle{
   
 }
+<<<<<<< HEAD
 div#downArrow{
+=======
+div#scrolldown{
+>>>>>>> 7d29b4a8620ee609488ab62ef2b058806dde34b1
   align-self: flex-end;
 }
 section#body{
