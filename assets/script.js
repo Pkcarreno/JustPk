@@ -1,25 +1,31 @@
 function onFullCharge() {
   window.addEventListener("scroll", function () {
-    const body = document.querySelector("#body");
+    const target = document.querySelector("header");
+    const body = document.querySelector("#body1");
     const title = document.querySelector("#title");
     const downArrow = document.querySelector("#downArrow");
     let rate = window.pageYOffset * 0.05;
     if(!elementTouchTop(body).top) {
-      headerblur(rate);
+      parallaxBlur(target,rate);
       if (!abElementTouchTop(title, downArrow).downTop) {
         titleDisplacement(rate);
       }
     }
   });
 }
-function headerblur(rate) {
-  const target = document.querySelector("header");
-  target.style.backgroundPosition = "center -" + rate + "px";
-  target.style.filter = "blur(" + rate + "px)";
+function parallaxBlur(element, rate) { //does a smooth background displacement down and add blur effect
+  element.style.backgroundPosition = "center -" + rate + "px";
+  element.style.filter = "blur(" + rate + "px)";
 }
 function titleDisplacement(rate) {
   const target = document.querySelector("#title");
-  target.style.transform = "translate(0px," + rate * 16 + "px)";
+  target.style.transform = "translate(0px," + rate * 15 + "px)";
+}
+function showElement(element) {
+  element.style.display = "none";
+}
+function hiddeElement(element) {
+  element.style.display = "none";
 }
 function elementTouchTop(element) { //returns true or false when the element top line or the element bottom line touch the top viewport
   let box = element.getBoundingClientRect();
@@ -28,7 +34,7 @@ function elementTouchTop(element) { //returns true or false when the element top
   if(box.top <= 0) {
     top = true;
   }
-  if(box.bottom <= 0) {
+  if(box.bottom >= 0) {
     bottom = true;
   }
 

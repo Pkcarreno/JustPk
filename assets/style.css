@@ -103,10 +103,9 @@ div#downArrow{
   align-self: flex-end;
 
   /*animation*/
-  animation-duration: 1.9s;
+  animation-duration: 1.4s;
   animation-name: downArrow;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-iteration-count: 3;
 }
 section#body{
   flex-basis: 100%;
