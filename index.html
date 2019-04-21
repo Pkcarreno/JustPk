@@ -3,28 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <title>Pk</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!-- Complements -->
-  <!-- jQueri -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Propios -->
-  <link rel="stylesheet" type="text/css" media="screen" href="/assets/style.css" >
-  <script src="/assets/script.js"></script>
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- Own -->
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" >
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/animation.css" >
+  <script src="assets/script.js"></script>
 </head>
-<body>
+
+<body class="flexbox flexInColumn">
   <!-- Start header  --> 
-  <header>
+  <header id="header" class="flexInRow">
+    <section id="headerMe">
+    </section>
   </header>
 
-  <section id="headTitle">
-    <section id="scrolldown">
-      <p id="title" class="lora">Scroll Down</p>
+  <section id="headTitle" class="flexbox flexCenter flexInRow flexWrap maxminH">
+    <div id="title" class="flexbox flexCenter flexinColumn maxminW">
+      <div class="flexbox flexCenter halfmaxminW">
+        <p id="leftTitle" class="lora headerTitle c4">I´m</p>
+      </div>
+      <div class="flexbox flexCenter halfmaxminW">
+        <p id="rightTitle" class="lora headerTitle c4">Pk</p>
+      </div>
+    </div>
+    <div id="downArrow" class="">
+      <i class="fas fa-chevron-down fa-3x c4"></i>
+    </div>
+  </section>
+  <!-- End header -->
+  <!-- Start body -->
+  <section id="body" class="flexbox flexInColumn">
+    <!-- Primera columna -->
+    <section id="body1" class="flexbox flexInColumn aquartermaxminH">
+      <div class="flexbox flexInRow maxminH">
+        <div class="flexbox flexCenter halfmaxminW">
+          <p id="aboutTitle" class="lora c5">About me</p>
+        </div>
+      </div>
     </section>
+    <!-- Segunda columna -->
+    <section id="body2" class="flexbox maxminH">
+        <div id="body2Animation">
+          <p class="body2Backgroundeffect1">pedro carreno pedro carreno pedro carreno pedro carreno pedro carreno pedro carreno pedro carreno pedro</p>
+        </div>
   </section>
+  <!-- End body -->
+  <!-- Start footer -->
 
-  <section id="body">
-  </section>
+  <!-- End footer -->
+  <!-- call to function only when the page is fully loaded -->
+  <script> onFullCharge(); </script>
 </body>
 </html>

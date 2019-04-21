@@ -1,11 +1,73 @@
 @import url('https://fonts.googleapis.com/css?family=Lora|Roboto:300,400');
 *{
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: 'Roboto', sans-serif;
 }
 .lora{
   font-family: 'Lora', serif;
+}
+.c1{
+  color: #ffa883;
+}
+.c2{
+  color: #fde3cb;
+}
+.c3{
+  color: #626c70;
+}
+.c4{
+  color: #faf2e8;
+}
+.c5{
+  color: #6fc7e1;
+}
+.maxminH{
+  min-height: 100vh;
+  max-height: 100vh;
+}
+.maxminW{
+  min-width: 100vw;
+  max-width: 100vw;
+}
+.halfmaxminW{
+  min-width: 50vw;
+  max-width: 50vw;
+}
+.flexbox{
+  display: flex;
+}
+.flexWrap{
+  flex-wrap: wrap;
+}
+.flexNowrap{
+  flex-wrap: nowrap;
+}
+.flexCenter{
+  justify-content: center;
+  align-items: center;
+}
+.centerflexItem{
+  justify-items: center;
+  align-self: center;
+}
+.flexLeft{
+  justify-content: left;
+}
+.flexRight{
+  justify-content: right;
+}
+.flexInRow{
+  flex-direction: row;
+}
+.flexInColumn{
+  flex-direction: column;
+}
+.headerTitle{
+  font-size: 20vmax;
+}
+.fixed{
+  position: fixed;
 }
 header{
   position: fixed;
@@ -14,29 +76,82 @@ header{
   top: 0px;
   left: 0px;
   z-index: -1;
-  background-image: url(../assets/pictures/Toyota\ AE86.jpg);
+  background-image: url(../assets/pictures/headerBack.jpg);
   background-size: cover;
   background-position: center 0px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-section#headTitle{
+section#headerMe{
+  position: fixed;
   width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-image: url(../assets/pictures/headerMe.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
-section#scrolldown{
-  margin: auto;
-  width: 200px;
-  height: 60px;
+section#headTitle{
+  margin: 0px;
+  padding: opx;
+  flex-basis: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
-p#title{
-  text-align: center;
-  font-size: 1.5em;
-  color: white;
+div#title{
+
+}
+p#leftTitle{
+  
+}
+p#rightTitle{
+  
+}
+div#downArrow{
+  align-self: flex-end;
 }
 section#body{
-  width: 100%;
-  height: 800px;
-  margin-top: 20px;
-  background-color: white;
+  flex-basis: 100%;
+  margin-top: 2vh;
+}
+section#body1{
+  background-color: #ffa88379;
+  min-height: 110vh;
+  max-height: 110vh;
+  overflow: hidden;
+}
+p#aboutTitle{
+  font-size: 5vmax;
+}
+section#body2{
+  background-color: #ffa883;
+  flex-basis: 100vw;
+  min-height: 50vh;
+  max-height: 50vh;
+  overflow: hidden;
+}
+.body2Backgroundeffect1{
+  background: -webkit-linear-gradient(#faf2e8,#6fc7e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2vw;
+  transform: rotate(-45deg);
+  margin: 0px;
+  padding: 0px;
+
+
+
+  /*animation*/
+  animation-duration: 8s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+div#body2Animation{
+  
+  
 }
