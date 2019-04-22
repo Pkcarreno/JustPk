@@ -1,27 +1,31 @@
 function onFullCharge() {
   window.addEventListener("scroll", function () {
-    const body = document.querySelector("#body");
+    const target = document.querySelector("header");
+    const body = document.querySelector("#body1");
     const title = document.querySelector("#title");
     const downArrow = document.querySelector("#downArrow");
     let rate = window.pageYOffset * 0.05;
     if(!elementTouchTop(body).top) {
-      headerblur(rate);
-      if (!abElementTouchTop(title, downArrow).downTop || !elementTouchTop(title).top) {
+      parallaxBlur(target,rate);
+      if (!abElementTouchTop(title, downArrow).downTop) {
         titleDisplacement(rate);
       }
-      console.log(abElementTouchTop(title, downArrow));
-      console.log(title.getBoundingClientRect().bottom,"||", downArrow.getBoundingClientRect().top)
     }
   });
 }
-function headerblur(rate) {
-  const target = document.querySelector("header");
-  target.style.backgroundPosition = "center -" + rate + "px";
-  target.style.filter = "blur(" + rate + "px)";
+function parallaxBlur(element, rate) { //does a smooth background displacement down and add blur effect
+  element.style.backgroundPosition = "center -" + rate + "px";
+  element.style.filter = "blur(" + rate + "px)";
 }
 function titleDisplacement(rate) {
   const target = document.querySelector("#title");
-  target.style.transform = "translate3d(0px," + rate * 15 + "px, 0px)";
+  target.style.transform = "translate(0px," + rate * 15 + "px)";
+}
+function showElement(element) {
+  element.style.display = "none";
+}
+function hiddeElement(element) {
+  element.style.display = "none";
 }
 function elementTouchTop(element) { //returns true or false when the element top line or the element bottom line touch the top viewport
   let box = element.getBoundingClientRect();
@@ -30,7 +34,7 @@ function elementTouchTop(element) { //returns true or false when the element top
   if(box.top <= 0) {
     top = true;
   }
-  if(box.bottom <= 0) {
+  if(box.bottom >= 0) {
     bottom = true;
   }
 
@@ -39,7 +43,7 @@ function elementTouchTop(element) { //returns true or false when the element top
     bottom
   }
 }
-function abElementTouchTop(elementA, elementB) { //returns true or false if element a and b touch the top and bottom border in each combination each other
+function abElementTouchTop(elementA, elementB) { //returns true or false if element a and b touch the top and bottom border in each combination each other, pointing to element A
   let boxA = elementA.getBoundingClientRect();
   let boxB = elementB.getBoundingClientRect();
   let upTop = false;
@@ -47,16 +51,16 @@ function abElementTouchTop(elementA, elementB) { //returns true or false if elem
   let upBottom = false;
   let downBottom = false;
 
-  if (boxA.top >= boxB.top) { //element a top line and element b top line
+  if ((boxA.top >= boxB.top) && !(boxA.top >= 0)) { //element a top line and element b top line
     upTop = true;
   }
-  if (boxA.bottom >= boxB.top) { //element a bottom line and element b top line
+  if ((boxA.bottom >= boxB.top) && !(boxA.top >= 0)) { //element a bottom line and element b top line
     downTop = true;
   }
-  if (boxA.top >= boxB.bottom) { //element a top line and element b bottom line
+  if (boxA.top >= boxB.bottom && !(boxA.top >= 0)) { //element a top line and element b bottom line
     upBottom = true;
   }
-  if (boxA.bottom >= boxB.bottom) { //element a bottom line and element b bottom line
+  if (boxA.bottom >= boxB.bottom && !(boxA.top >= 0)) { //element a bottom line and element b bottom line
     downBottom = true;
   }
 
