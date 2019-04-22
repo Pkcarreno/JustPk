@@ -1,16 +1,22 @@
 @font-face {
-    font-family: 'loraregular';
-    font-family: 'robotoregular';
+    font-family: 'Lora';
+    font-family: 'Roboto';
     font-family: 'source_code_proregular';
-    src: url('lora-regular-webfont.woff2') format('woff2'),
-         url('lora-regular-webfont.woff') format('woff');
-    src: url('roboto-regular-webfont.woff2') format('woff2'),
-         url('roboto-regular-webfont.woff') format('woff');
-    src: url('sourcecodepro-regular-webfont.woff2') format('woff2'),
-         url('sourcecodepro-regular-webfont.woff') format('woff');
+    src: local('Lora'), 
+         url('/assets/Fonts/lora-regular-webfont.woff2') format('woff2'),
+         url('/assets/Fonts/lora-regular-webfont.woff') format('woff'),
+         url('/assets/Fonts/Lora-Regular.ttf') format('ttf');
+    src: local('Roboto'), 
+         url('/assets/Fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('/assets/Fonts/roboto-regular-webfont.woff') format('woff'),
+         url('/assets/Fonts/Roboto-Regular.ttf') format('ttf');
+    src: local('Source code pro'), 
+         url('/assets/Fonts/sourcecodepro-regular-webfont.woff2') format('woff2'),
+         url('/assets/Fonts/sourcecodepro-regular-webfont.woff') format('woff'),
+         url('/assets/Fonts/SourceCodePro-Regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
-
+    font-display: auto;
 }
 *{
   margin: 0px;
@@ -88,7 +94,7 @@ header{
   top: 0px;
   left: 0px;
   z-index: -1;
-  background-image: url(../assets/pictures/headerBack.jpg);
+  background-image: url(../assets/pictures/headerBack.webp);
   background-size: cover;
   background-position: center 0px;
   background-repeat: no-repeat;
@@ -101,7 +107,7 @@ section#headerMe{
   top: 0px;
   left: 0px;
   z-index: 1;
-  background-image: url(../assets/pictures/headerMe.png);
+  background-image: url(../assets/pictures/headerMe.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
