@@ -15,7 +15,7 @@ function onFullCharge() {
 }
 function parallaxBlur(element, rate) { //does a smooth background displacement down and add blur effect
   element.style.backgroundPosition = "center -" + rate + "px";
-  element.style.filter = "blur(" + rate + "px)";
+  element.style.filter = "blur(" + rate + "px) brightness(0.95)";
 }
 function titleDisplacement(rate) {
   const target = document.querySelector("#title");
