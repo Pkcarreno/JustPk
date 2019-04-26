@@ -43,6 +43,9 @@
 .c5{
   color: #6fc7e1;
 }
+.beige{
+  color: #FBD19E;
+}
 .maxminH{
   min-height: 100vh;
   max-height: 100vh;
@@ -66,6 +69,12 @@
 }
 .flexCenter{
   justify-content: center;
+  align-items: center;
+}
+.flexHCenter{
+  justify-content: center;
+}
+.flexWCenter{
   align-items: center;
 }
 .centerflexItem{
@@ -94,7 +103,8 @@ header{
   top: 0px;
   left: 0px;
   z-index: -1;
-  background-image: url(../assets/pictures/headerBack.webp);
+  filter:brightness(0.95);
+  background-image: url(../assets/pictures/headerBack-4.webp);
   background-size: cover;
   background-position: center 0px;
   background-repeat: no-repeat;
@@ -107,7 +117,7 @@ section#headerMe{
   top: 0px;
   left: 0px;
   z-index: 1;
-  background-image: url(../assets/pictures/headerMe.webp);
+  background-image: url(../assets/pictures/headerMe-4.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -120,14 +130,6 @@ section#headTitle{
   overflow: hidden;
   z-index: -1;
 }
-div#downArrow{
-  align-self: flex-end;
-
-  /*animation*/
-  animation-duration: 1.4s;
-  animation-name: downArrow;
-  animation-iteration-count: 3;
-}
 section#body{
   flex-basis: 100%;
   margin-top: 2vh;
@@ -139,7 +141,16 @@ section#body1{
   overflow: hidden;
 }
 p#aboutTitle{
-  font-size: 5vmax;
+  margin-top: 15vmax;
+  font-size: 10vmax;
+}
+hr#aboutLine{
+  margin-left: 2vmax;
+  height: 0.1vmax;
+  width: 60vmax;
+  border: 0;
+  background-color: #6fc7e1;
+  align-self: flex-start;
 }
 section#body2{
   background-color: #ffa883;

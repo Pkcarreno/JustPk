@@ -1,13 +1,12 @@
 function onFullCharge() {
+  const target = document.querySelector("header");
+  const body = document.querySelector("#body1");
+  const title = document.querySelector("#title");
   window.addEventListener("scroll", function () {
-    const target = document.querySelector("header");
-    const body = document.querySelector("#body1");
-    const title = document.querySelector("#title");
-    const downArrow = document.querySelector("#downArrow");
-    let rate = window.pageYOffset * 0.05;
+    let rate = (window.pageYOffset || document.documentElement.scrollTop)* 0.05 ;
     if(!elementTouchTop(body).top) {
       parallaxBlur(target,rate);
-      if (!abElementTouchTop(title, downArrow).downTop) {
+      if (!abElementTouchTop(title,body).downTop) {
         titleDisplacement(rate);
       }
     }
@@ -15,11 +14,11 @@ function onFullCharge() {
 }
 function parallaxBlur(element, rate) { //does a smooth background displacement down and add blur effect
   element.style.backgroundPosition = "center -" + rate + "px";
-  element.style.filter = "blur(" + rate + "px)";
+  element.style.filter = "blur(" + rate + "px) brightness(0.95)";
 }
 function titleDisplacement(rate) {
   const target = document.querySelector("#title");
-  target.style.transform = "translate(0px," + rate * 15 + "px)";
+  target.style.transform = "translate(0px," + rate / 0.1 + "px)";
 }
 function showElement(element) {
   element.style.display = "none";
