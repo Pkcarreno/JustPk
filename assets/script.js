@@ -1,7 +1,7 @@
 function onFullCharge() {
   const target = document.querySelector("header");
-  const body = document.querySelector("#body1");
-  const title = document.querySelector("#title");
+  const body = document.getElementById("body1");
+  const title = document.getElementById("title");
   window.addEventListener("scroll", function () {
     let rate = (window.pageYOffset || document.documentElement.scrollTop)* 0.05 ;
     if(!elementTouchTop(body).top) {
@@ -14,7 +14,7 @@ function onFullCharge() {
 }
 function parallaxBlur(element, rate) { //does a smooth background displacement down and add blur effect
   element.style.backgroundPosition = "center -" + rate + "px";
-  element.style.filter = "blur(" + rate + "px) brightness(0.95)";
+  element.style.filter = "blur(" + rate + "px)";
 }
 function titleDisplacement(rate) {
   const target = document.querySelector("#title");
