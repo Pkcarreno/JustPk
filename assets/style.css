@@ -123,6 +123,7 @@ section#body1{
 }
 p#aboutTitle{
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-top: 15vmax;
   font-size: 10vmax;
 }
@@ -134,6 +135,10 @@ hr#aboutLine{
   background-color: #6fc7e1;
   align-self: flex-start;
 }
+=======
+  font-size: 2vmax;
+}
+>>>>>>> c5dd76b... add some optimizational tricks
 =======
   font-size: 2vmax;
 }
