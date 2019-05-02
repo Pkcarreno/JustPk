@@ -1,17 +1,28 @@
-function onFullCharge() {
-  const target = document.querySelector("header");
-  const body = document.getElementById("body1");
-  const title = document.getElementById("title");
-  window.addEventListener("scroll", function () {
-    let rate = (window.pageYOffset || document.documentElement.scrollTop)* 0.05 ;
-    if(!elementTouchTop(body).top) {
-      parallaxBlur(target,rate);
-      if (!abElementTouchTop(title,body).downTop) {
-        titleDisplacement(rate);
-      }
+/* prefetch.js */ 
+function navAndVersionCheck() {
+  let word = arguments[0].split(' ');
+  let navVersionString = navigator.appVersion.split(' ');
+  let bol = false;
+  for (let i = 0; i < (word.length - 1); i += 2) {
+    let version = 0;
+    for (let b = 0; b < navVersionString.length; b++) {
+      if (word[i] == navVersionString[b].substring(word[i].length, -1))
+        version = navVersionString[b].substring(word[i].length + 1);
     }
-  });
+    if ((navigator.userAgent.indexOf(word[i]) > -1) && (word[i + 1] <= version)) {
+      if (arguments[1] != undefined) {
+        arguments[1]();
+      }
+      bol = true;
+      return bol;
+    }
+  }
 }
+function setImage() {
+  document.querySelector("header").style.backgroundImage = "url('./assets/pictures/headerBack-4.webp')";
+  document.getElementById("headerMe").style.backgroundImage = "url('./assets/pictures/headerMe-4.webp')";
+}
+/* scroll.js */ 
 function parallaxBlur(element, rate) { //does a smooth background displacement down and add blur effect
   element.style.backgroundPosition = "center -" + rate + "px";
   element.style.filter = "blur(" + rate + "px)";
@@ -28,16 +39,16 @@ function hiddeElement(element) {
 }
 function elementTouchTop(element) { //returns true or false when the element top line or the element bottom line touch the top viewport
   let box = element.getBoundingClientRect();
-  let top = false; 
+  let top = false;
   let bottom = false;
-  if(box.top <= 0) {
+  if (box.top <= 0) {
     top = true;
   }
-  if(box.bottom >= 0) {
+  if (box.bottom >= 0) {
     bottom = true;
   }
 
-  return{
+  return {
     top,
     bottom
   }
