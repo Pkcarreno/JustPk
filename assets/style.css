@@ -116,20 +116,12 @@ section#body{
   margin-top: 2vh;
 }
 section#body1{
+  padding: 4vmax;
   background-color: #faf2e8;;
   min-height: 110vh;
   max-height: 110vh;
   overflow: hidden;
 }
 p#aboutTitle{
-  margin-top: 15vmax;
-  font-size: 10vmax;
-}
-hr#aboutLine{
-  margin-left: 2vmax;
-  height: 0.1vmax;
-  width: 60vmax;
-  border: 0;
-  background-color: #6fc7e1;
-  align-self: flex-start;
+  font-size: 3vmax;
 }
