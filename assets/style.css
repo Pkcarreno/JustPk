@@ -11,22 +11,22 @@
   font-weight: 300;
 }
 .c1{
-  color: #ffa883;
+  color: #315947;
 }
 .c2{
-  color: #fde3cb;
+  color: #F2A922;
 }
 .c3{
-  color: #626c70;
+  color: #595142;
 }
 .c4{
-  color: #faf2e8;
+  color: #F2EEEB;
 }
 .c5{
-  color: #6fc7e1;
+  color: #261E1A;
 }
-.beige{
-  color: #DB372B;
+.cNeutro{
+  color: #999999;
 }
 .maxminH{
   min-height: 100vh;
@@ -122,6 +122,7 @@ section#body1{
   overflow: hidden;
 }
 p#aboutTitle{
+<<<<<<< HEAD
   margin-top: 15vmax;
   font-size: 10vmax;
 }
@@ -133,3 +134,7 @@ hr#aboutLine{
   background-color: #6fc7e1;
   align-self: flex-start;
 }
+=======
+  font-size: 2vmax;
+}
+>>>>>>> c5dd76b... add some optimizational tricks
