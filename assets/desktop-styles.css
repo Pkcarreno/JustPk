@@ -1,0 +1,18 @@
+.fullHeight {
+  height: 100%;
+}
+h1#heyOnTop {
+  margin-left: 10%;
+  background-color: red;/**/
+}
+section#aboutMeSection div#whatTypesOfWorkDoIDo div div {
+  height: 70%;
+  width: 28%;
+}
+section#aboutMeSection div#myWorkSpirit div div{
+  height: 30%;
+  width: 40%;
+}
+footer div#contactWays div{
+  margin: 5%;
+}

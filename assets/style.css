@@ -1,0 +1,185 @@
+.flexbox {
+  display: flex;
+}
+.flexColumnWrap {
+  flex-flow: column wrap;
+}
+.flexColumnNowrap {
+  flex-flow: column nowrap;
+}
+.flexRowWrap {
+  flex-flow: row wrap;
+}
+.flexRowNowrap {
+  flex-flow: row nowrap;
+}
+.wAlignCenter {
+  align-items: center;
+}
+.hJustifyCenter {
+  justify-content: center;
+}
+.fullWidth{
+  width: 100%;
+}
+.textAligntCenter {
+  text-align: center
+}
+.button {
+  height: 100%;
+  width: 100%;
+
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  /*height: 100%;*/
+  font-family: 'Karla';
+  font-weight: 400;
+  font-style: normal;
+  box-sizing:border-box;
+  /*maquetacion*/
+  background-color: palevioletred;/**/
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: normal;
+}
+b {
+  font-weight: bold;
+}
+header {
+  width: 100%;
+  background-color: grey;/**/
+  align-items: flex-end;
+}
+header div {
+  height: 55%;
+  background-color: whitesmoke;/**/
+  
+}
+header div div{
+  background-color: green;/**/
+  height: 80%;
+}
+section#aboutMeSection {
+  height: 400%;
+  background-color: blue; /**/
+}
+section#aboutMeSection div {
+  height: 30%;
+}
+section#aboutMeSection div#aboutMe {
+  background-color: cyan;/**/
+}
+section#aboutMeSection div#aboutMe h2{
+  margin-bottom: 5%;
+}
+section#aboutMeSection div#whatTypesOfWorkDoIDo {
+  background-color: magenta;/**/
+}
+section#aboutMeSection div#whatTypesOfWorkDoIDo h2{
+  margin-bottom: 5%;
+}
+section#aboutMeSection div#whatTypesOfWorkDoIDo div {
+  height: 40%;
+}
+section#aboutMeSection div#whatTypesOfWorkDoIDo div div {
+  margin: 2%;
+  padding: 2%;
+  background-color: white;
+  border-radius: 0.5em;
+}
+section#aboutMeSection div#whatTypesOfWorkDoIDo div div h4 {
+  margin-bottom: 10%;
+}
+section#aboutMeSection div#myWorkSpirit {
+  height: 40%;
+  background-color: orange;/**/
+}
+section#aboutMeSection div#myWorkSpirit h2 {
+  margin-bottom: 5%;
+}
+section#aboutMeSection div#myWorkSpirit div {
+  height: 45%;
+}
+section#aboutMeSection div#myWorkSpirit div div{
+  margin: 2%;
+  padding: 2%;
+  background-color: white;
+  border-radius: 0.5em;
+}
+section#aboutMeSection div#myWorkSpirit div div h4{
+  width: 30%;
+  margin-right: 5%;
+}
+section#worksSection {
+  height: 80%;
+  background-color: red; /**/
+}
+section#worksSection div#worksSectionInnerBlock {
+  height: 60%;
+  align-items: flex-end;
+}
+section#worksSection div#worksSectionInnerBlock div#workSectionArticles {
+  height: 100%;
+  align-items: stretch;
+}
+section#worksSection div#worksSectionInnerBlock div#workSectionArticles div{
+  width: 20%
+}
+section#worksSection div#worksSectionInnerBlock div#workSectionArticles div#workSectionArticlesItems {
+  width: 60%;
+}
+div#workSectionArticlesItems article {
+  height: 100%;
+  width: 33.3%;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  padding: 1.5em;
+
+  background-color: white; /**/
+}
+div#workSectionArticlesItems article img {
+  min-height: 56.25%;
+  width: 100%;
+
+  background-color: black; /**/
+}
+div#workSectionArticlesItems article h4 {
+  margin: 0.5em;
+}
+div#workSectionArticlesItems article p {
+  margin: 0.5em;
+}
+div#workSectionArticlesItems article p#date {
+  text-align: end;
+}
+footer {
+  background-color: seagreen;/**/
+}
+footer h3 {
+  margin: 5%;
+}
+footer div {
+  margin-bottom: 5%;
+}
+footer div#contactMedia a{
+  margin-left: 2%;
+  margin-right: 2%;
+}

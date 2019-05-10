@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Just Pk</title>
-  <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/ico/apple-icon-60x60.png">
@@ -26,88 +26,120 @@
   <!-- Own -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/fonts.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" >
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/desktop-styles.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/animation.css" >
 </head>
 
-<body class="">
+<body class="flexbox flexRowWrap">
   <!-- Start header  --> 
-  <header>
+  <header class="flexbox flexRowWrap fullWidth fullHeight">
     <h1 id="heyOnTop">Hey! I'm Pk</h1>
-    <div>
+    <div class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
       <h1 id="heyOnBottom">Hey! I'm Pk</h1>
-      <p> I'm a Software developer ****</p>
+      <div class="flexbox flexColumnWrap wAlignCenter hJustifyCenter">
+        <p> I'm a</p>
+        <p>Software developer ****</p>
+      </div>
     </div>
   </header>
   <!-- End header -->
   <!-- Start body -->
   <!-- About me section -->
-  <section>
+  <section id="aboutMeSection" class="flexbox flexRowWrap fullWidth">
     <!-- about me -->
-    <div>
+    <div id="aboutMe" class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
       <h2>About me</h2>
-      <p>My name is <b>Pedro Carreño</b> and i've 20 yo <br> I'm from Margarita island, Venezuela <br> In 2016, i began my career in systems engineering, currently underway <br> I'm an enthusiast on videogames and his development <br> And i love the photography.</p>
+      <p class="textAligntCenter">My name is <b>Pedro Carreño</b> and i've 20 yo <br> I'm from Margarita island, Venezuela <br> In 2016, i began my career in systems engineering, currently underway <br> I'm an enthusiast on videogames and his development <br> And i love the photography.</p>
     </div>
     <!-- What types of work do i do? -->
-    <div>
-      <h2>What types of work do i do?</h2>
-      <div>
-        <h4>Web pages</h4>
-        <p>I dominate HTML, CSS, PHP and JavaScript and different kind of frameworks.</p>
-      </div>
-      <div>
-        <h4>Database</h4>
-        <p>I work with SQL and MySQL on relational databases.</p>
-      </div>
-      <div>
-        <h4>Software solutions</h4>
-        <p>With my knowledge on C++, C# and Java, i make any software program for you.</p>
+    <div id="whatTypesOfWorkDoIDo" class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
+      <h2>What types of work do i do?**</h2>
+      <div class="flexbox flexRowWrap wAlignCenter hJustifyCenter">
+        <div class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter">
+          <h4 class="textAligntCenter">Web pages</h4>
+          <p class="textAligntCenter">I dominate HTML, CSS, PHP and JavaScript and different kind of frameworks.</p>
+        </div>
+        <div class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter">
+          <h4 class="textAligntCenter">Database</h4>
+          <p class="textAligntCenter">I work with SQL and MySQL on relational databases.</p>
+        </div>
+        <div class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter">
+          <h4 class="textAligntCenter">Software solutions</h4>
+          <p class="textAligntCenter">With my knowledge on C++, C# and Java, i make any software program for you.</p>
+        </div>
       </div>
     </div>
     <!-- My work spirit -->
-    <div>
+    <div id="myWorkSpirit" class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
       <h2>My work spirit</h2>
-      <div>
-        <h4>Clean work</h4>
-        <p>Because a clean world is most beautiful and efficient, the code alsso happens.</p>
-      </div>
-      <div>
-        <h4>Organized</h4>
-        <p>Having the clear parts of a project helps to obtain optimal results.</p>
-      </div>
-      <div>
-        <h4>Comunication</h4>
-        <p>Because for me the client is the most important thing in a job, the quality of my service is above all thing.</p>
+      <div class="flexbox flexRowWrap wAlignCenter hJustifyCenter">
+        <div class="flexbox flexRowNowrap wAlignCenter hJustifyCenter">
+          <h4>Clean work</h4>
+          <p>Because a clean world is most beautiful and efficient, the code alsso happens.</p>
+        </div>
+        <div class="flexbox flexRowNowrap wAlignCenter hJustifyCenter">
+          <h4>Organized</h4>
+          <p>Having the clear parts of a project helps to obtain optimal results.</p>
+        </div>
+        <div class="flexbox flexRowNowrap wAlignCenter hJustifyCenter">
+          <h4>Comunication</h4>
+          <p>Because for me the client is the most important thing in a job, the quality of my service is above all things.</p>
+        </div>
       </div>
     </div>
   </section>
   <!-- Works section -->
-  <section>
-    <div>
-      <h2>Works**</h2>
-      <article>
-        <h4>Example</h4>
-        <p>This is an examplen of a future work.</p>
-        <p> <b>08/05/2019</b> </p>
-      </article>
+  <section id="worksSection" class="flexbox flexColumnWrap wAlignCenter hJustifyCenter fullWidth">
+    <h2>Works**</h2>
+    <div id="worksSectionInnerBlock" class="flexbox flexColumnWrap wAlignCenter hJustifyCenter fullWidth">
+      <div id="workSectionArticles" class="flexbox flexRowNowrap hJustifyCenter fullWidth">
+        <div>
+          <button disabled="disabled" class="button"> < </button>
+        </div>
+        <div id="workSectionArticlesItems" class="flexbox flexRowWrap wAlignCenter hJustifyCenter fullWidth">
+          <article>
+            <img src="/assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
+            <h4>Example</h4>
+            <p>This is an examplen of a future work.</p>
+            <p id="date"> <b>08/05/2019</b> </p>
+          </article>
+
+
+          <article>
+            <img src="/assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
+            <h4>Example</h4>
+            <p>This is an examplen of a future work.</p>
+            <p id="date"> <b>08/05/2019</b> </p>
+          </article>
+
+        </div>
+        <div>
+          <button disabled="disabled" class="button"> > </button>
+        </div>
+      </div>
     </div>
   </section>
   <!-- End body -->
   <!-- Start footer -->
-  <footer>
+  <footer id="contact" class="flexbox flexColumnWrap wAlignCenter hJustifyCenter fullWidth">
     <h3>Contact</h3>
-    <div>
-      <h4>Mail</h4>
-      <a href="mailto:pkcarreno@gmail.com">pkcarreno@gmail.com</a>
+    <div id="contactWays" class="flexbox wAlignCenter hJustifyCenter fullWidth">
+      <div>
+        <h4 class="textAligntCenter">My mail</h4>
+        <a href="mailto:pkcarreno@gmail.com">pkcarreno@gmail.com</a>
+      </div>
+      <div>
+        <h4 class="textAligntCenter">My curriculum</h4>
+        <a href="http://curriculumvitae">Pedro Carreño Curriculum vitae.pdf</a>
+      </div>
     </div>
-    <div>
-      <h4>Curriculum</h4>
-      <a href="http://curriculumvitae">Pedro Carreño Curriculum vitae.pdf</a>
+    <div id="contactMedia" class="flexbox flexRowNowrap wAlignCenter hJustifyCenter">
+      <a href="">Instagram</a>
+      <a href="">Twitter</a>
+      <a href="">LinkedIn</a>
+      <a href="">Github</a>
+      <a href="">Fiver</a>
     </div>
-    <a href="">Instagram</a>
-    <a href="">Twitter</a>
-    <a href="">LinkedIn</a>
-    <a href="">Github</a>
-    <a href="">Fiver</a>
   </footer>
   <!-- End footer -->
 </body>
