@@ -160,7 +160,8 @@ div#workSectionArticlesItems article {
   background-color: white; /**/
 }
 div#workSectionArticlesItems article img {
-  min-height: 50%;
+  min-height: 30%;
+  max-height: 50%;
   width: 100%;
 
   background-color: black; /**/
