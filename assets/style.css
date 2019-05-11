@@ -123,10 +123,11 @@ section#aboutMeSection div#myWorkSpirit div div{
 }
 section#aboutMeSection div#myWorkSpirit div div h4{
   min-width: 30%;
-  margin-right: 5%;
+  margin-right: 10%;
 }
 section#worksSection {
   height: 80%;
+  min-height: 30em;
   background-color: red; /**/
 }
 section#worksSection div#worksSectionInnerBlock {
