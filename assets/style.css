@@ -19,9 +19,6 @@
 .hJustifyCenter {
   justify-content: center;
 }
-.fullWidth{
-  width: 100%;
-}
 .textAligntCenter {
   text-align: center
 }
@@ -51,6 +48,7 @@
 }
 html {
   height: 100%;
+  overflow: auto;
 }
 body {
   height: 100%;
@@ -64,7 +62,6 @@ b {
   font-weight: bold;
 }
 header {
-  width: 100%;
   background-color: grey;/**/
   align-items: flex-end;
 }
@@ -78,11 +75,11 @@ header div div{
   height: 80%;
 }
 section#aboutMeSection {
-  height: 400%;
+  min-height: 230em;
   background-color: blue; /**/
 }
 section#aboutMeSection div {
-  height: 30%;
+  min-height: 70em;
 }
 section#aboutMeSection div#aboutMe {
   background-color: cyan;/**/
@@ -97,11 +94,12 @@ section#aboutMeSection div#whatTypesOfWorkDoIDo h2{
   margin-bottom: 5%;
 }
 section#aboutMeSection div#whatTypesOfWorkDoIDo div {
-  height: 40%;
+  min-height: 45%;
 }
 section#aboutMeSection div#whatTypesOfWorkDoIDo div div {
-  margin: 2%;
-  padding: 2%;
+  margin: 2em;
+  padding: 2em;
+  flex-shrink: 1;
   background-color: white;
   border-radius: 0.5em;
 }
@@ -109,23 +107,24 @@ section#aboutMeSection div#whatTypesOfWorkDoIDo div div h4 {
   margin-bottom: 10%;
 }
 section#aboutMeSection div#myWorkSpirit {
-  height: 40%;
+  min-height: 90em;
   background-color: orange;/**/
 }
 section#aboutMeSection div#myWorkSpirit h2 {
   margin-bottom: 5%;
 }
 section#aboutMeSection div#myWorkSpirit div {
-  height: 45%;
+  min-height: 45%;
 }
 section#aboutMeSection div#myWorkSpirit div div{
-  margin: 2%;
-  padding: 2%;
+  margin: 2em;
+  padding: 2em;
+  flex-shrink: 1;
   background-color: white;
   border-radius: 0.5em;
 }
 section#aboutMeSection div#myWorkSpirit div div h4{
-  width: 30%;
+  min-width: 30%;
   margin-right: 5%;
 }
 section#worksSection {
@@ -140,32 +139,38 @@ section#worksSection div#worksSectionInnerBlock div#workSectionArticles {
   height: 100%;
   align-items: stretch;
 }
-section#worksSection div#worksSectionInnerBlock div#workSectionArticles div{
-  width: 20%
-}
 section#worksSection div#worksSectionInnerBlock div#workSectionArticles div#workSectionArticlesItems {
   width: 60%;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+section#worksSection div#worksSectionInnerBlock div#workSectionArticles div#workSectionArticlesItems::-webkit-scrollbar {
+  display: none;
 }
 div#workSectionArticlesItems article {
   height: 100%;
-  width: 33.3%;
+  min-width: 250px;
+  max-width: 40%;
   margin-left: 0.25em;
   margin-right: 0.25em;
   padding: 1.5em;
+  display: flex;
+  flex-flow: column nowrap;
 
   background-color: white; /**/
 }
 div#workSectionArticlesItems article img {
-  min-height: 56.25%;
+  min-height: 50%;
   width: 100%;
 
   background-color: black; /**/
 }
 div#workSectionArticlesItems article h4 {
-  margin: 0.5em;
+  margin-top: 0.5em;
 }
 div#workSectionArticlesItems article p {
-  margin: 0.5em;
+  text-align: center;
 }
 div#workSectionArticlesItems article p#date {
   text-align: end;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Just Pk</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="57x57" href="assets/ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/ico/apple-icon-60x60.png">
@@ -19,14 +19,15 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/ico/favicon-16x16.png">
   <link rel="manifest" href="assets/ico/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffe66b">
+  <meta name="msapplication-TileColor" content="#ffe66b"> <!-- CAMBIAR -->
   <meta name="msapplication-TileImage" content="assets/ico/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffe66b">
+  <meta name="theme-color" content="#ffe66b"> <!-- CAMBIAR -->
   <!-- Complements -->
   <!-- Own -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/fonts.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" >
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/desktop-styles.css">
+  <link rel="stylesheet" type="text/css" media="screen and (hover: hover) and (pointer: fine) " href="assets/desktop-styles.css">
+  <link rel="stylesheet" type="text/css" media="screen and (hover: none) and (pointer: coarse)" href="assets/mobile-styles.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/animation.css" >
 </head>
 
@@ -96,11 +97,12 @@
         <div>
           <button disabled="disabled" class="button"> < </button>
         </div>
-        <div id="workSectionArticlesItems" class="flexbox flexRowWrap wAlignCenter hJustifyCenter fullWidth">
+        <div id="workSectionArticlesItems" class="flexbox flexRowWrap wAlignCenter hJustifyCenter">
           <article>
             <img src="/assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
             <h4>Example</h4>
             <p>This is an examplen of a future work.</p>
+            <p> <b>For:</b> that company </p>
             <p id="date"> <b>08/05/2019</b> </p>
           </article>
 
@@ -109,8 +111,26 @@
             <img src="/assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
             <h4>Example</h4>
             <p>This is an examplen of a future work.</p>
+            <p> <b>For:</b> that company </p>
             <p id="date"> <b>08/05/2019</b> </p>
           </article>
+
+          <article>
+            <img src="/assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
+            <h4>Example</h4>
+            <p>This is an examplen of a future work.</p>
+            <p> <b>For:</b> that company </p>
+            <p id="date"> <b>08/05/2019</b> </p>
+          </article>
+
+          <article>
+            <img src="/assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
+            <h4>Example</h4>
+            <p>This is an examplen of a future work.</p>
+            <p> <b>For:</b> that company </p>
+            <p id="date"> <b>08/05/2019</b> </p>
+          </article>
+
 
         </div>
         <div>

@@ -1,16 +1,18 @@
 .fullHeight {
   height: 100%;
+  min-width: 500px;
 }
 .fullWidth{
   width: 100%;
-  min-width: 700px;
+}
+.button {
+  display: none;
 }
 h1#heyOnTop {
-  margin-left: 10%;
-  background-color: red;/**/
+  display: none;
 }
 h1#heyOnBottom {
-  display: none;
+  background-color: red;/**/
 }
 section#aboutMeSection div#whatTypesOfWorkDoIDo div div {
   min-height: 8em;
@@ -24,11 +26,11 @@ section#aboutMeSection div#myWorkSpirit div div{
   min-width: 25em;
   max-width: 40em;
 }
-section#worksSection div#worksSectionInnerBlock div#workSectionArticles div {
-  width: 20%
+section#worksSection div#worksSectionInnerBlock div#workSectionArticles div button {
+  display: none;
 }
 section#worksSection div#worksSectionInnerBlock div#workSectionArticles div#workSectionArticlesItems {
-  width: 60%;
+  width: 100%;
 }
 footer div#contactWays div{
   margin: 5%;
