@@ -124,7 +124,7 @@ section#worksSection {
 }
 section#worksSection div#worksSectionInnerBlock {
   height: 50%;
-  min-height: 250px;
+  min-height: 270px;
   align-items: flex-end;
 }
 section#worksSection div#worksSectionInnerBlock div#workSectionArticles {
