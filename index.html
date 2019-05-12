@@ -29,6 +29,8 @@
   <link rel="stylesheet" type="text/css" media="screen and (hover: hover) and (pointer: fine) " href="assets/desktop-styles.css">
   <link rel="stylesheet" type="text/css" media="screen and (any-hover: none) and (any-pointer: coarse)" href="assets/mobile-style.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/animation.css" >
+  <script src="assets/cssLoad.js"></script>
+  <script async src="assets/workSectionScroll.js"></script>
 </head>
 
 <body class="flexbox flexRowWrap">
@@ -49,12 +51,12 @@
   <section id="aboutMeSection" class="flexbox flexRowWrap fullWidth">
     <!-- about me -->
     <div id="aboutMe" class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
-      <h2>About me</h2>
+      <h2 class="h2margin">About me</h2>
       <p class="textAligntCenter">My name is <b>Pedro Carreño</b> and i've 20 yo <br> I'm from Margarita island, Venezuela <br> In 2016, i began my career in systems engineering, currently underway <br> I'm an enthusiast on videogames and his development <br> And i love the photography.</p>
     </div>
     <!-- What types of work do i do? -->
     <div id="whatTypesOfWorkDoIDo" class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
-      <h2>My services</h2>
+      <h2 class="h2margin">My services</h2>
       <div class="flexbox flexRowWrap wAlignCenter hJustifyCenter">
         <div class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter">
           <h4 class="textAligntCenter">Web pages</h4>
@@ -72,7 +74,7 @@
     </div>
     <!-- My work spirit -->
     <div id="myWorkSpirit" class="flexbox flexColumnNowrap wAlignCenter hJustifyCenter fullWidth">
-      <h2>My work spirit</h2>
+      <h2 class="h2margin">My work spirit</h2>
       <div class="flexbox flexRowWrap wAlignCenter hJustifyCenter">
         <div class="flexbox flexRowNowrap wAlignCenter hJustifyCenter">
           <h4>Clean work</h4>
@@ -91,11 +93,11 @@
   </section>
   <!-- Works section -->
   <section id="worksSection" class="flexbox flexColumnWrap wAlignCenter hJustifyCenter fullWidth">
-    <h2>My published works</h2>
+    <h2 class="h2margin">My published works</h2>
     <div id="worksSectionInnerBlock" class="flexbox flexColumnWrap wAlignCenter hJustifyCenter fullWidth">
       <div id="workSectionArticles" class="flexbox flexRowNowrap hJustifyCenter fullWidth">
         <div>
-          <button disabled="disabled" class="button"> < </button>
+          <button class="button" onclick="leftScroll('workSectionArticlesItems', 100);"> < </button>
         </div>
         <div id="workSectionArticlesItems" class="flexbox flexRowWrap">
           <article>
@@ -134,7 +136,7 @@
 
         </div>
         <div>
-          <button disabled="disabled" class="button"> > </button>
+          <button class="button" onclick="rightScroll('workSectionArticlesItems', 100);"> > </button>
         </div>
       </div>
     </div>

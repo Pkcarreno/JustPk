@@ -22,6 +22,9 @@
 .textAligntCenter {
   text-align: center
 }
+.h2margin{
+  margin-bottom: 5%;
+}
 .button {
   height: 100%;
   width: 100%;
@@ -75,23 +78,16 @@ header div div{
   height: 80%;
 }
 section#aboutMeSection {
-  min-height: 230em;
   background-color: blue; /**/
 }
 section#aboutMeSection div {
-  min-height: 70em;
+  padding: 5em
 }
 section#aboutMeSection div#aboutMe {
   background-color: cyan;/**/
 }
-section#aboutMeSection div#aboutMe h2{
-  margin-bottom: 5%;
-}
 section#aboutMeSection div#whatTypesOfWorkDoIDo {
   background-color: magenta;/**/
-}
-section#aboutMeSection div#whatTypesOfWorkDoIDo h2{
-  margin-bottom: 5%;
 }
 section#aboutMeSection div#whatTypesOfWorkDoIDo div {
   min-height: 45%;
@@ -107,11 +103,7 @@ section#aboutMeSection div#whatTypesOfWorkDoIDo div div h4 {
   margin-bottom: 10%;
 }
 section#aboutMeSection div#myWorkSpirit {
-  min-height: 90em;
   background-color: orange;/**/
-}
-section#aboutMeSection div#myWorkSpirit h2 {
-  margin-bottom: 5%;
 }
 section#aboutMeSection div#myWorkSpirit div {
   min-height: 45%;
