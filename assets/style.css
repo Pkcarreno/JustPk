@@ -52,6 +52,66 @@ body #mebgdiv #mebg {
   }
 }
 
+body #langList {
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik";
+  font-size: 1.4em;
+  left: 1.5em;
+  top: 1.2em;
+  width: 2.2em;
+  border-bottom: 2px solid #382f00;
+}
+
+@media (min-width: 840px) {
+  body #langList {
+    border-bottom: 2px solid white;
+  }
+}
+
+body #langList li {
+  line-height: 140%;
+  text-align: center;
+}
+
+body #langList li a {
+  color: #ffe66b;
+  text-decoration: none;
+}
+
+body #langList li a:active {
+  color: white;
+}
+
+@media (min-width: 840px) {
+  body #langList li a {
+    color: #222222;
+    text-decoration: none;
+  }
+  body #langList li a:hover {
+    color: #a2a2a2;
+  }
+  body #langList li a:active {
+    color: white;
+  }
+}
+
+body #langList #inner {
+  display: none;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@media (min-width: 840px) {
+  body #langList:hover #inner {
+    -webkit-animation: 10s ease 1 languaje;
+            animation: 10s ease 1 languaje;
+    display: block;
+  }
+}
+
 body #titleMain {
   height: 100%;
   width: 30%;
@@ -82,7 +142,6 @@ body #titleMain #subtitle {
   font-family: "Rubik", normal;
   color: white;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 body #bodybg {
@@ -113,11 +172,15 @@ body #bodybg #aboutMe {
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
+  margin-top: 40px;
 }
 
 @media (min-width: 840px) {
   body #bodybg #aboutMe {
-    width: 44%;
+    width: 43%;
+    padding-right: 3px;
+    border-bottom: 3px dashed white;
+    border-right: 3px dashed white;
   }
 }
 
@@ -213,13 +276,20 @@ body footer h2, body footer h1 {
 body footer #separateFooter {
   padding-top: 15px;
   background-color: #ffe66b;
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
-          clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 9%, 0 0);
+          clip-path: polygon(100% 0, 100% 100%, 0 9%, 0 0);
   font-size: 350%;
   text-align: right;
   float: right;
   shape-outside: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
   shape-margin: .7em;
+}
+
+@media (min-width: 840px) {
+  body footer #separateFooter {
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+  }
 }
 
 body footer #separateFooter mark {

@@ -1,0 +1,17 @@
+@-webkit-keyframes languaje {
+  from {
+    display: none;
+  }
+  to {
+    display: block;
+  }
+}
+@keyframes languaje {
+  from {
+    display: none;
+  }
+  to {
+    display: block;
+  }
+}
+/*# sourceMappingURL=animation.css.map */

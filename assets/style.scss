@@ -3,7 +3,8 @@ $color:(
   primary-light: lighten(#ffe66b,40%),
   primary-dark: darken(#ffe66b,60%),
   accent: #222222,
-  accent-light: lighten(#222222,85%)
+  accent-light: lighten(#222222,85%),
+  accent-lesslight: lighten(#222222,50%)
 );
 @function color($color_name) {
   @return map-get($color, $color_name);
@@ -66,6 +67,61 @@ body {
     }
   }
 
+  #langList {
+    list-style:none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-family: $font2;
+    font-size: 1.4em;
+    left: 1.5em;
+    top: 1.2em;
+    width: 2.2em;
+    border-bottom: 2px solid color(primary-dark);
+    
+    @include desktop {
+      border-bottom: 2px solid white;
+    }
+
+    li {
+      line-height:140%;
+      text-align: center;
+
+      a {
+        color:color(primary); 
+        text-decoration:none;
+      }
+      a:active { 
+        color: color(primary-light);
+      }
+      @include desktop {
+          a {
+            color:color(accent); 
+            text-decoration:none;
+          }
+         a:hover { 
+            color: color(accent-lesslight);
+          }
+          a:active { 
+            color: color(primary-light);
+          }
+        }
+    }
+    #inner {
+      display:none;
+      animation-direction: alternate;
+    }
+  }
+  @include desktop {
+    #langList:hover {
+      #inner {
+        animation: 10s ease 1 languaje;
+        display: block;
+      }
+    }
+  }
+
+
   #titleMain {
     height: 100%;
     width: 30%;
@@ -92,7 +148,6 @@ body {
       font-family: $font2, normal;
       color: color(primary-light);
       text-align: center;
-      margin-bottom: 20px;
     }
   }
 
@@ -116,9 +171,13 @@ body {
       margin: 1em;
       align-self: center;
       text-align: center;
+      margin-top: 40px;
 
       @include desktop {
-        width: 44%;
+        width: 43%;
+        padding-right: 3px; 
+        border-bottom: 3px dashed white;
+        border-right: 3px dashed white;
       }
 
       h2 {
@@ -202,13 +261,17 @@ body {
     #separateFooter {
       padding-top: 15px; 
       background-color: color(primary);
-      clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+      clip-path: polygon(100% 0, 100% 100%, 0 9%, 0 0);
       font-size: 350%;
       text-align: right;
 
       float: right;
       shape-outside: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
       shape-margin: .7em;
+
+      @include desktop {
+        clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+      }
 
       mark {
         background-color: color(accent);
