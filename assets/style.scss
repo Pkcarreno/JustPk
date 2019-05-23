@@ -1,0 +1,80 @@
+$color:(
+  primary: #ffe66b,
+  primary-light: lighten(#ffe66b,40%),
+  accent: #222222,
+
+);
+@function color($color_name) {
+  @return map-get($color, $color_name);
+}
+
+$font1: 'Karla';
+$font2: 'Rubik';
+$margin: 2em;
+
+html,body {
+  height: 100%;
+}
+
+body {
+  font-family: $font1;
+  margin: 0px;
+  background-image: url("../assets/pictures/textura/white-waves.png");
+  
+  #bg {
+    background-color: color(primary);
+    clip-path: polygon(20% 0, 100% 80%, 100% 100%, 0 100%, 0 0);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  #mebgdiv {
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+
+    #mebg {
+      height: 90%;
+      position: absolute;
+      top: -10%;
+      right: -5%;
+    }
+  }
+
+  #titleMain {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #title {
+      color: color(accent);
+    }
+    #subtitle {
+      font-family: $font2, normal;
+      color: color(primary-light);
+    }
+  }
+
+  #bodybg {
+    padding-top: 15px; 
+    background-color: color(primary);
+    clip-path: polygon(100% 0, 100% 100%, 69% 100%, 0 37%, 0 0);
+    width: 100%;
+    height: 100%;
+
+    #aboutMe {
+      max-width: 30%;
+      margin: 2em;
+      
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
+}
