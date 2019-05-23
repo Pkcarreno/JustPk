@@ -6,6 +6,7 @@ body {
   font-family: "Karla";
   margin: 0;
   background-image: url("../assets/pictures/textura/white-waves.png");
+  color: #222222;
 }
 
 body #bg {
@@ -37,7 +38,7 @@ body #mebgdiv #mebg {
   height: 90%;
   position: absolute;
   top: -10%;
-  right: -25%;
+  right: -35%;
 }
 
 @media (min-width: 840px) {
@@ -49,58 +50,66 @@ body #mebgdiv #mebg {
 
 body #titleMain {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 30%;
+  z-index: 1;
+  position: relative;
+  top: 60%;
+  left: 32%;
+}
+
+@media (min-width: 840px) {
+  body #titleMain {
+    top: 45%;
+    left: 20%;
+  }
 }
 
 body #titleMain #title {
-  color: #222222;
   text-transform: uppercase;
+  font-size: 3em;
+}
+
+body #titleMain #title h1 {
+  text-align: center;
+  margin: 0;
 }
 
 body #titleMain #subtitle {
   font-family: "Rubik", normal;
   color: white;
+  text-align: center;
 }
 
 body #bodybg {
   padding-top: 15px;
   background-color: #ffe66b;
   width: 100%;
-  height: 100%;
-}
-
-@media (min-width: 840px) {
-  body #bodybg {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% auto;
-        grid-template-columns: 50% auto;
-    grid-area: "card aboutMe";
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body #bodybg #aboutMe {
   width: 80%;
+  margin: 1em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-align: center;
 }
 
 @media (min-width: 840px) {
   body #bodybg #aboutMe {
-    grid-area: aboutMe;
-    text-align: left;
-    margin: 4em 0 0 4em;
+    width: 45%;
   }
 }
 
@@ -111,7 +120,7 @@ body #bodybg #aboutMe h2 {
 body #bodybg #card {
   background-color: white;
   padding: 20px;
-  margin: 1em auto;
+  margin: 1em;
   border-radius: 15px;
   width: 80%;
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -120,14 +129,7 @@ body #bodybg #card {
 
 @media (min-width: 840px) {
   body #bodybg #card {
-    grid-area: card;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    margin: 1em;
+    width: 45%;
   }
 }
 
@@ -149,7 +151,7 @@ body #bodybg #card ul li span {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: white;
+  background-color: #382f00;
   border-radius: 50%;
   margin-right: 20px;
 }
@@ -160,11 +162,28 @@ body #bodybg #card ul li strong {
   margin-top: 10px;
 }
 
+body #bodybg #myWorks {
+  width: 100%;
+  height: 100%;
+}
+
+body footer {
+  text-align: center;
+}
+
+body footer h2, body footer h1 {
+  margin: 0;
+}
+
 body footer #separateFooter {
   padding-top: 15px;
   background-color: #ffe66b;
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 69% 100%, 0 37%, 0 0);
-          clip-path: polygon(100% 0, 100% 100%, 69% 100%, 0 37%, 0 0);
-  height: 30%;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+          clip-path: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+  font-size: 350%;
+  text-align: right;
+  float: right;
+  shape-outside: polygon(100% 0, 100% 100%, 82% 100%, 0 9%, 0 0);
+  shape-margin: 1em;
 }
 /*# sourceMappingURL=style.css.map */
