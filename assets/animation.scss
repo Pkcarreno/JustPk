@@ -1,30 +1,23 @@
-@keyframes subtitle {
+$color:(
+  primary: #ffe66b,
+  primary-light: lighten(#ffe66b,40%),
+  primary-dark: darken(#ffe66b,60%),
+  accent: #222222,
+  accent-light: lighten(#222222,85%),
+  accent-lesslight: lighten(#222222,50%)
+);
+@function color($color_name) {
+  @return map-get($color, $color_name);
+}
+@keyframes worksBorder {
   0% {
-    //content: 'Software developer';
-    opacity: 1;
+    border: 3px solid color(primary);
   }
-
-  20% {
-   // content: 'Software developer';
-    opacity: 0;
+  50% {
+    border: 3px solid color(accent);
   }
-
-  40% {
-   //content: '(Soon) System engineer';
-    opacity: 1;
-  }
-
-  60% {
-    //content: '(Soon) System engineer';
-    opacity: 0;
-  }
-  80% {
-   // content: 'Game developer enthusiast';
-    opacity: 1;
-  }
-
   100% {
-    //content: 'Game developer enthusiast';
-    opacity: 0;
+    border: 3px solid color(primary-light);
   }
+  
 }

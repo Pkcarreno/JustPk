@@ -24,11 +24,13 @@
   <meta name="msapplication-TileImage" content="assets/ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffe66b"> <!-- CAMBIAR -->
   <!-- Complements -->
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <!-- Own -->
   <link rel="stylesheet" type="text/css" media="screen" href="assets/fonts.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/animation.css">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
-  <script async src="assets/textAdd.js"></script>
+  <script src="assets/textAdd.js"></script>
 </head>
 
 <body>
@@ -39,10 +41,13 @@
     <img id="mebg" src="assets/pictures/recorte con nueva tecnica b&n 1440p.png">
   </div>
 
-  <ul id="langList">
-    <li><a disable href="#">EN</a></li>  <!-- comprobar disable  -->
-    <li id="inner"><a href="">ES</a></li>
-  </ul>
+  <nav id="langList">
+    ul
+    <ul>
+      <li><a id="disable" href="#">EN</a></li>  <!-- comprobar disable  -->
+      <li id="inner"><a href="">ES</a></li>
+    </ul>
+  </nav>
 
   <main id="titleMain">
     <section id="title">
@@ -50,7 +55,7 @@
     </section>
 
     <section id="subtitle">
-      <p>i'm <span id="subtitleText">Software developer</span> </p>
+      <p>i'm <span id="subtitleText"></span></p> 
     </section>
   </main>
 
@@ -84,10 +89,32 @@
       <h2>My works</h2>
       <main>
         <div class="workCard">
-          <strong> <a href="#">My Title</a></strong>
+          <strong> <mark><a href="#"> My Title</a></mark> </strong>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, dignissimos?</p>
-          <img src="assets/pictures/Captura realizada el 2019-05-02 00.13.49.png">
+          <img src="assets/pictures/IMG_5483.JPG">
         </div>
+        <div class="workCard">
+          <strong> <mark><a href="#"> My Title</a></mark> </strong>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, dignissimos?</p>
+          <img src="assets/pictures/IMG_5483.JPG">
+        </div>
+        <div class="workCard">
+          <strong> <mark><a href="#"> My Title</a></mark> </strong>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, dignissimos?</p>
+          <img src="assets/pictures/IMG_5483.JPG">
+        </div>
+        <div class="workCard">
+          <strong> <mark><a href="#"> My Title</a></mark> </strong>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, dignissimos?</p>
+          <img src="assets/pictures/IMG_5483.JPG">
+        </div>
+        <div class="workCard">
+          <strong> <mark><a href="#"> My Title</a></mark> </strong>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, dignissimos?</p>
+          <img src="assets/pictures/IMG_5483.JPG">
+        </div>
+        
+        
       </main>
     </section>
   </main>
@@ -106,15 +133,15 @@
       </div>
 
       <div id="media">
-        <i>Instagram</i>
-        <i>Twitter</i>
-        <i>Github</i>
-        <i>Linkedin</i>
+        <a href="https://www.instagram.com/pkcarreno"><i class="fab fa-instagram fa-3x"></i></a>
+        <a href="https://twitter.com/Pkcarreno"><i class="fab fa-twitter-square fa-3x"></i></a>
+        <a href="https://github.com/Pkcarreno"><i class="fab fa-github-square fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/pedro-carre%C3%B1o-1b5640185/"><i class="fab fa-linkedin fa-3x"></i></a>
       </div>
 
 
     </div>
   </footer>
-  
+  <script>init();</script>
 </body>
 </html>

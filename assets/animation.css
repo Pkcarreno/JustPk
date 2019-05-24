@@ -1,41 +1,64 @@
-@-webkit-keyframes subtitle {
-  0% {
-    opacity: 1;
+@-webkit-keyframes arrowflip {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
-  20% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+  to {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
   }
 }
+
+@keyframes arrowflip {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+
+@-webkit-keyframes subtitle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes subtitle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes worksBorder {
   0% {
-    opacity: 1;
+    border: 3px solid #ffe66b;
   }
-  20% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 1;
+  50% {
+    border: 3px solid #222222;
   }
   100% {
-    opacity: 0;
+    border: 3px solid white;
+  }
+}
+
+@keyframes worksBorder {
+  0% {
+    border: 3px solid #ffe66b;
+  }
+  50% {
+    border: 3px solid #222222;
+  }
+  100% {
+    border: 3px solid white;
   }
 }
 /*# sourceMappingURL=animation.css.map */
