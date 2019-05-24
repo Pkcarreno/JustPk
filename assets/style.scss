@@ -291,6 +291,8 @@ body {
         @include desktop {
           div:hover {
             animation: 0.8s ease infinite worksBorder;
+            box-shadow: 0 20px 40px rgba(0,0,0,.2);
+            transition: all 1s;
           }
         }
       }

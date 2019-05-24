@@ -316,6 +316,10 @@ body #bodybg #myWorks main div img {
   body #bodybg #myWorks main div:hover {
     -webkit-animation: 0.8s ease infinite worksBorder;
             animation: 0.8s ease infinite worksBorder;
+    -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 1s;
+    transition: all 1s;
   }
 }
 

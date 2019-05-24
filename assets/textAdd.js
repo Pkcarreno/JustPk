@@ -1,9 +1,4 @@
-function init() {
-  var words = [
-    'Software developer',
-    '(Soon) System engineer',
-    'Game developer enthusiast'
-  ],
+function init(words) {
     wordWrapper = document.getElementById('subtitleText'),
     wordWrapperContent = wordWrapper.innerHTML,
     addingWord = false,
