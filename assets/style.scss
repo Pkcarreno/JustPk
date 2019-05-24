@@ -23,7 +23,7 @@ $desktop: 840px;
 }
 
 .workCard {
-  background-color: color(accent-light);
+  background-color: color(primary-light);
 }
 
 html,body {
@@ -76,7 +76,7 @@ body {
     font-size: 1.4em;
     left: 1.5em;
     top: 1.2em;
-    width: 2.2em;
+    width: 1.7em;
     border-bottom: 2px solid color(primary-dark);
     
     @include desktop {
@@ -99,7 +99,7 @@ body {
             color:color(accent); 
             text-decoration:none;
           }
-         a:hover { 
+          a:hover { 
             color: color(accent-lesslight);
           }
           a:active { 
@@ -109,13 +109,11 @@ body {
     }
     #inner {
       display:none;
-      animation-direction: alternate;
     }
   }
   @include desktop {
     #langList:hover {
       #inner {
-        animation: 10s ease 1 languaje;
         display: block;
       }
     }
@@ -148,6 +146,11 @@ body {
       font-family: $font2, normal;
       color: color(primary-light);
       text-align: center;
+
+      #subtitleText {
+        animation: 8s ease infinite subtitle;
+        animation-direction: alternate;
+      }
     }
   }
 
@@ -158,13 +161,10 @@ body {
     border-bottom-color: color(accent);
     border-bottom-style: dashed;
     border-bottom-width: 10px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    @include desktop {
-    }
 
     #aboutMe {
       width: 80%;
@@ -246,6 +246,21 @@ body {
       }
       main {
         width: 100%;
+
+        div {
+          strong {
+            a {
+              color:color(accent); 
+              text-decoration:none;
+            }
+            a:hover { 
+              color: color(accent-lesslight);
+            }
+            a:active { 
+              color: color(primary-light);
+            }
+          }
+        }
       }
     }
   }
@@ -279,18 +294,26 @@ body {
       }
     }
     #contact {
-      margin-left: .2em;
+      margin-left: .4em;
 
       #contactLinks {
         margin-top: 30px;
 
-        a {
+        p {
           margin: 20px;
-          text-decoration: none;
           font-family: $font2;
+          font-weight: 500;
+        }
+        a {
+          color:color(primary); 
+          text-decoration: none;
           line-height: 1.5em;
 
         }
+        a:active { 
+          color: color(primary-light);
+        }
+        
         #fiverr {
           font-size: 3em;
         }

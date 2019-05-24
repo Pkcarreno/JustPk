@@ -1,5 +1,5 @@
 .workCard {
-  background-color: #fbfbfb;
+  background-color: white;
 }
 
 html, body {
@@ -61,7 +61,7 @@ body #langList {
   font-size: 1.4em;
   left: 1.5em;
   top: 1.2em;
-  width: 2.2em;
+  width: 1.7em;
   border-bottom: 2px solid #382f00;
 }
 
@@ -142,6 +142,13 @@ body #titleMain #subtitle {
   font-family: "Rubik", normal;
   color: white;
   text-align: center;
+}
+
+body #titleMain #subtitle #subtitleText {
+  -webkit-animation: 8s ease infinite subtitle;
+          animation: 8s ease infinite subtitle;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 body #bodybg {
@@ -263,6 +270,19 @@ body #bodybg #myWorks main {
   width: 100%;
 }
 
+body #bodybg #myWorks main div strong a {
+  color: #222222;
+  text-decoration: none;
+}
+
+body #bodybg #myWorks main div strong a:hover {
+  color: #a2a2a2;
+}
+
+body #bodybg #myWorks main div strong a:active {
+  color: white;
+}
+
 body footer {
   text-align: center;
 }
@@ -298,18 +318,27 @@ body footer #separateFooter mark {
 }
 
 body footer #contact {
-  margin-left: .2em;
+  margin-left: .4em;
 }
 
 body footer #contact #contactLinks {
   margin-top: 30px;
 }
 
-body footer #contact #contactLinks a {
+body footer #contact #contactLinks p {
   margin: 20px;
-  text-decoration: none;
   font-family: "Rubik";
+  font-weight: 500;
+}
+
+body footer #contact #contactLinks a {
+  color: #ffe66b;
+  text-decoration: none;
   line-height: 1.5em;
+}
+
+body footer #contact #contactLinks a:active {
+  color: white;
 }
 
 body footer #contact #contactLinks #fiverr {

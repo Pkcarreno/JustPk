@@ -1,17 +1,41 @@
-@-webkit-keyframes languaje {
-  from {
-    display: none;
+@-webkit-keyframes subtitle {
+  0% {
+    opacity: 1;
   }
-  to {
-    display: block;
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
-@keyframes languaje {
-  from {
-    display: none;
+@keyframes subtitle {
+  0% {
+    opacity: 1;
   }
-  to {
-    display: block;
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=animation.css.map */

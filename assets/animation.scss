@@ -1,9 +1,30 @@
-@keyframes languaje {
-  from {
-    visibility: hidden;
+@keyframes subtitle {
+  0% {
+    //content: 'Software developer';
+    opacity: 1;
   }
 
-  to {
-    visibility: visible
+  20% {
+   // content: 'Software developer';
+    opacity: 0;
+  }
+
+  40% {
+   //content: '(Soon) System engineer';
+    opacity: 1;
+  }
+
+  60% {
+    //content: '(Soon) System engineer';
+    opacity: 0;
+  }
+  80% {
+   // content: 'Game developer enthusiast';
+    opacity: 1;
+  }
+
+  100% {
+    //content: 'Game developer enthusiast';
+    opacity: 0;
   }
 }
