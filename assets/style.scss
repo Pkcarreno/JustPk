@@ -64,67 +64,61 @@ body {
   }
 
   #langList {
-    list-style:none;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    font-family: $font2;
-    font-size: 1.4em;
-    left: 1.5em;
-    top: 1.2em;
-    width: 1.7em;
-    border-bottom: 2px solid color(primary-dark);
+    position: relative;
     
-    @include desktop {
-      border-bottom: 2px solid white;
-    }
+    ul {
+      position: absolute;
+      list-style: none;
+      border-bottom: 2px solid color(primary-dark);
+      padding: 0;
+      margin: 0;
+      font-family: $font2;
+      font-size: 1.4em;
+      left: 1.5em;
+      top: 1.2em;
+      width: 1.7em;
 
-    li {
-      line-height:140%;
-      text-align: center;
-
-      a {
-        color:color(primary); 
-        text-decoration:none;
-
-        #arrow {
-          size: 1em;
-        }
-      }
-      a:active { 
-        color: color(primary-light);
-      }
-      #disable {
-        pointer-events: none;
-        cursor: default;
-      }
       @include desktop {
-          a {
-            color:color(accent); 
-            text-decoration:none;
-          }
-          a:hover { 
-            color: color(accent-lesslight);
-
-            #arrow {
-
-              animation: 0.8s ease 1 arrowflip;
+        border-bottom: 2px solid white;
+      }
+  
+      li {
+        line-height:140%;
+        text-align: center;
+  
+        a {
+          color:color(primary); 
+          text-decoration:none;
+        }
+        a:active { 
+          color: color(primary-light);
+        }
+        #disable {
+          pointer-events: none;
+          cursor: default;
+        }
+        @include desktop {
+            a {
+              color:color(accent); 
+              text-decoration:none;
+            }
+            a:hover { 
+              color: color(accent-lesslight);
+              transition: all 0.3s;
+            }
+            a:active { 
+              color: color(primary-light);
             }
           }
-          a:active { 
-            color: color(primary-light);
-          }
-        }
-    }
-    #inner {
-      display:none;
+      }
+      #inner {
+        display:none;
+      }
     }
   }
-  @include desktop {
-    #langList:hover {
-      #inner {
-        display: block;
-      }
+  #langList:hover {
+    #inner {
+      display: block;
     }
   }
 

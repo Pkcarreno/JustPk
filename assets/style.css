@@ -49,8 +49,13 @@ body #mebgdiv #mebg {
 }
 
 body #langList {
-  list-style: none;
+  position: relative;
+}
+
+body #langList ul {
   position: absolute;
+  list-style: none;
+  border-bottom: 2px solid #382f00;
   padding: 0;
   margin: 0;
   font-family: "Rubik";
@@ -58,63 +63,54 @@ body #langList {
   left: 1.5em;
   top: 1.2em;
   width: 1.7em;
-  border-bottom: 2px solid #382f00;
 }
 
 @media (min-width: 840px) {
-  body #langList {
+  body #langList ul {
     border-bottom: 2px solid white;
   }
 }
 
-body #langList li {
+body #langList ul li {
   line-height: 140%;
   text-align: center;
 }
 
-body #langList li a {
+body #langList ul li a {
   color: #ffe66b;
   text-decoration: none;
 }
 
-body #langList li a #arrow {
-  size: 1em;
-}
-
-body #langList li a:active {
+body #langList ul li a:active {
   color: white;
 }
 
-body #langList li #disable {
+body #langList ul li #disable {
   pointer-events: none;
   cursor: default;
 }
 
 @media (min-width: 840px) {
-  body #langList li a {
+  body #langList ul li a {
     color: #222222;
     text-decoration: none;
   }
-  body #langList li a:hover {
+  body #langList ul li a:hover {
     color: #a2a2a2;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
-  body #langList li a:hover #arrow {
-    -webkit-animation: 0.8s ease 1 arrowflip;
-            animation: 0.8s ease 1 arrowflip;
-  }
-  body #langList li a:active {
+  body #langList ul li a:active {
     color: white;
   }
 }
 
-body #langList #inner {
+body #langList ul #inner {
   display: none;
 }
 
-@media (min-width: 840px) {
-  body #langList:hover #inner {
-    display: block;
-  }
+body #langList:hover #inner {
+  display: block;
 }
 
 body #titleMain {
