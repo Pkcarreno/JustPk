@@ -1,3 +1,36 @@
+/* FontAwesome*/
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome 5 Brands";
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-instagram:before {
+  content: "\f16d";
+}
+
+.fa-twitter-square:before {
+  content: "\f081";
+}
+
+.fa-github-square:before {
+  content: "\f09b";
+}
+
+.fa-linkedin:before {
+  content: "\f08c";
+}
+
+/*--------------------------*/
 html, body {
   height: 100%;
 }
