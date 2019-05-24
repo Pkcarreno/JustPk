@@ -10,14 +10,11 @@ $color:(
   @return map-get($color, $color_name);
 }
 @keyframes worksBorder {
-  0% {
+  from {
     border: 3px solid color(primary);
   }
-  50% {
+  to {
     border: 3px solid color(accent);
-  }
-  100% {
-    border: 3px solid color(primary-light);
   }
   
 }
