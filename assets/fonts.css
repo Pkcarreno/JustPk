@@ -1,40 +1,4 @@
 @font-face {
-    font-family: 'Rubik';
-    src: url('Fonts/hinted-Rubik-BlackItalic.eot');
-    src: local('Rubik Black Italic'), local('Rubik-BlackItalic'),
-        url('Fonts/hinted-Rubik-BlackItalic.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/hinted-Rubik-BlackItalic.woff2') format('woff2'),
-        url('Fonts/hinted-Rubik-BlackItalic.woff') format('woff'),
-        url('Fonts/hinted-Rubik-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('Fonts/hinted-Rubik-BoldItalic.eot');
-    src: local('Rubik Bold Italic'), local('Rubik-BoldItalic'),
-        url('Fonts/hinted-Rubik-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/hinted-Rubik-BoldItalic.woff2') format('woff2'),
-        url('Fonts/hinted-Rubik-BoldItalic.woff') format('woff'),
-        url('Fonts/hinted-Rubik-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('Fonts/hinted-Rubik-Bold.eot');
-    src: local('Rubik Bold'), local('Rubik-Bold'),
-        url('Fonts/hinted-Rubik-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/hinted-Rubik-Bold.woff2') format('woff2'),
-        url('Fonts/hinted-Rubik-Bold.woff') format('woff'),
-        url('Fonts/hinted-Rubik-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Karla';
     src: url('Fonts/hinted-Karla-Regular.eot');
     src: local('Karla'), local('Karla-Regular'),
@@ -44,18 +8,6 @@
         url('Fonts/hinted-Karla-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('Fonts/hinted-Rubik-MediumItalic.eot');
-    src: local('Rubik Medium Italic'), local('Rubik-MediumItalic'),
-        url('Fonts/hinted-Rubik-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/hinted-Rubik-MediumItalic.woff2') format('woff2'),
-        url('Fonts/hinted-Rubik-MediumItalic.woff') format('woff'),
-        url('Fonts/hinted-Rubik-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
 }
 
 @font-face {
@@ -96,18 +48,6 @@
 
 @font-face {
     font-family: 'Karla';
-    src: url('Fonts/hinted-Karla-BoldItalic.eot');
-    src: local('Karla Bold Italic'), local('Karla-BoldItalic'),
-        url('Fonts/hinted-Karla-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/hinted-Karla-BoldItalic.woff2') format('woff2'),
-        url('Fonts/hinted-Karla-BoldItalic.woff') format('woff'),
-        url('Fonts/hinted-Karla-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Karla';
     src: url('Fonts/hinted-Karla-Italic.eot');
     src: local('Karla Italic'), local('Karla-Italic'),
         url('Fonts/hinted-Karla-Italic.eot?#iefix') format('embedded-opentype'),
@@ -140,18 +80,6 @@
         url('Fonts/hinted-Rubik-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('Fonts/hinted-Rubik-Black.eot');
-    src: local('Rubik Black'), local('Rubik-Black'),
-        url('Fonts/hinted-Rubik-Black.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/hinted-Rubik-Black.woff2') format('woff2'),
-        url('Fonts/hinted-Rubik-Black.woff') format('woff'),
-        url('Fonts/hinted-Rubik-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
 }
 
 @font-face {
