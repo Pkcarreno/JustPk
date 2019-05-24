@@ -1,43 +1,3 @@
-@-webkit-keyframes arrowflip {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-  }
-}
-
-@keyframes arrowflip {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-  }
-}
-
-@-webkit-keyframes subtitle {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes subtitle {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @-webkit-keyframes worksBorder {
   0% {
     border: 3px solid #ffe66b;
@@ -49,7 +9,6 @@
     border: 3px solid white;
   }
 }
-
 @keyframes worksBorder {
   0% {
     border: 3px solid #ffe66b;
