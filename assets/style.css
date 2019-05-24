@@ -253,6 +253,7 @@ body #bodybg #myWorks {
   width: 100%;
   height: 100%;
   margin-top: 2em;
+  margin-bottom: 1em;
   border-top: 10px dashed #222222;
 }
 
@@ -270,6 +271,9 @@ body #bodybg #myWorks main {
 body #bodybg #myWorks main div {
   padding: 2em;
   background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
 }
 
 body #bodybg #myWorks main div strong mark {
@@ -297,7 +301,7 @@ body #bodybg #myWorks main div strong mark:active a {
 }
 
 body #bodybg #myWorks main div p {
-  text-align: center;
+  text-align: justify;
 }
 
 body #bodybg #myWorks main div img {
