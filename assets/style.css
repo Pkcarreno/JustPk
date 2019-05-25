@@ -1,4 +1,7 @@
-/* FontAwesome*/
+/*!
+ * Font Awesome Free 5.8.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
 .fab {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -205,14 +208,20 @@ body #bodybg #aboutMe {
       align-self: center;
   text-align: center;
   margin-top: 3.5em;
+  border-bottom-style: dashed;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  border-color: white;
+  border-width: 3px;
+  padding-right: 3px;
+  padding-left: 3px;
 }
 
 @media (min-width: 840px) {
   body #bodybg #aboutMe {
     width: 43%;
-    padding-right: 3px;
-    border-bottom: 3px dashed white;
-    border-right: 3px dashed white;
+    border-left-style: none;
+    padding-left: 0;
   }
 }
 

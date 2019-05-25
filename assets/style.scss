@@ -198,12 +198,18 @@ body {
       align-self: center;
       text-align: center;
       margin-top: 3.5em;
+      border-bottom-style: dashed;
+      border-left-style: dashed;
+      border-right-style: dashed;
+      border-color: color(primary-light);
+      border-width: 3px;
+      padding-right: 3px;
+      padding-left: 3px; 
 
       @include desktop {
         width: 43%;
-        padding-right: 3px; 
-        border-bottom: 3px dashed white;
-        border-right: 3px dashed white;
+        border-left-style: none;
+        padding-left: 0; 
       }
 
       h2 {
