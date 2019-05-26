@@ -312,53 +312,50 @@ body #bodybg #myWorks main {
   width: 100%;
 }
 
-body #bodybg #myWorks main div {
-  padding: 2em;
+body #bodybg #myWorks main a {
+  text-decoration: none;
+}
+
+body #bodybg #myWorks main a div {
+  position: relative;
   background-color: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: auto;
+  color: #222222;
   border: 2px solid transparent;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  display: inline-block;
+  padding: 2em;
 }
 
-body #bodybg #myWorks main div strong mark {
-  -webkit-text-emphasis: none;
-          text-emphasis: none;
-  background-color: transparent;
-}
-
-body #bodybg #myWorks main div strong mark a {
+body #bodybg #myWorks main a div strong {
   color: #222222;
-  text-decoration: none;
   font-size: 1.2em;
 }
 
-body #bodybg #myWorks main div strong mark:hover a {
-  color: #a2a2a2;
-}
-
-body #bodybg #myWorks main div strong mark:active {
-  background-color: #222222;
-}
-
-body #bodybg #myWorks main div strong mark:active a {
-  color: white;
-}
-
-body #bodybg #myWorks main div p {
+body #bodybg #myWorks main a div p {
   text-align: justify;
 }
 
-body #bodybg #myWorks main div img {
+body #bodybg #myWorks main a div #languaje {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  text-align: right;
+  margin-top: 4px;
+}
+
+body #bodybg #myWorks main a div #languaje mark {
+  background-color: #222222;
+  color: white;
+}
+
+body #bodybg #myWorks main a div img {
   width: 100%;
 }
 
 @media (min-width: 840px) {
-  body #bodybg #myWorks main div:before, body #bodybg #myWorks main div:after {
+  body #bodybg #myWorks main a div:before, body #bodybg #myWorks main a div:after {
     content: '';
     position: absolute;
     top: -2px;
@@ -367,19 +364,25 @@ body #bodybg #myWorks main div img {
     height: 0;
     border: 2px solid transparent;
   }
-  body #bodybg #myWorks main div:hover:after {
+  body #bodybg #myWorks main a div:hover:after {
     -webkit-animation: 0.8s ease-in-out infinite worksBorderTop;
             animation: 0.8s ease-in-out infinite worksBorderTop;
   }
-  body #bodybg #myWorks main div:hover:before {
+  body #bodybg #myWorks main a div:hover:before {
     -webkit-animation: 0.8s ease-in-out infinite worksBorderBottom;
             animation: 0.8s ease-in-out infinite worksBorderBottom;
   }
-  body #bodybg #myWorks main div:hover {
+  body #bodybg #myWorks main a div:hover {
     -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     -webkit-transition: all 1s;
     transition: all 1s;
+  }
+  body #bodybg #myWorks main a div:hover strong {
+    color: #a2a2a2;
+  }
+  body #bodybg #myWorks main a div:active strong {
+    color: #ffe66b;
   }
 }
 
