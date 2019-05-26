@@ -290,8 +290,11 @@ body {
           background-color: color(primary-light);
           box-sizing: border-box;
           height: auto;
-          border: 3px solid color(primary-light);
+          border: 2px solid transparent;
           box-shadow: 0 10px 20px rgba(0,0,0,.2);
+
+          position: relative;
+          display: inline-block;
 
           strong {
             mark {
@@ -324,10 +327,28 @@ body {
             width: 100%;
           }
         }
-
         @include desktop {
+          div:before, div:after{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 0;
+            height: 0;
+            border: 2px solid transparent;
+          }
+          div:hover:after {
+            animation: 0.8s ease-in-out infinite worksBorderTop;
+            //box-shadow: 0 20px 40px rgba(0,0,0,.2);
+            //transition: all 1s;
+          }
+          div:hover:before {
+            animation: 0.8s ease-in-out infinite worksBorderBottom;
+            //box-shadow: 0 20px 40px rgba(0,0,0,.2);
+            //transition: all 1s;
+          }
           div:hover {
-            animation: 0.8s ease infinite worksBorder;
+            //animation: 0.8s ease infinite worksBorder;
             box-shadow: 0 20px 40px rgba(0,0,0,.2);
             transition: all 1s;
           }

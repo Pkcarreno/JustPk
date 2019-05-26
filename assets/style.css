@@ -318,9 +318,11 @@ body #bodybg #myWorks main div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: auto;
-  border: 3px solid white;
+  border: 2px solid transparent;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: inline-block;
 }
 
 body #bodybg #myWorks main div strong mark {
@@ -356,9 +358,24 @@ body #bodybg #myWorks main div img {
 }
 
 @media (min-width: 840px) {
+  body #bodybg #myWorks main div:before, body #bodybg #myWorks main div:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    border: 2px solid transparent;
+  }
+  body #bodybg #myWorks main div:hover:after {
+    -webkit-animation: 0.8s ease-in-out infinite worksBorderTop;
+            animation: 0.8s ease-in-out infinite worksBorderTop;
+  }
+  body #bodybg #myWorks main div:hover:before {
+    -webkit-animation: 0.8s ease-in-out infinite worksBorderBottom;
+            animation: 0.8s ease-in-out infinite worksBorderBottom;
+  }
   body #bodybg #myWorks main div:hover {
-    -webkit-animation: 0.8s ease infinite worksBorder;
-            animation: 0.8s ease infinite worksBorder;
     -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     -webkit-transition: all 1s;

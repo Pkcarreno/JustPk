@@ -9,12 +9,72 @@ $color:(
 @function color($color_name) {
   @return map-get($color, $color_name);
 }
-@keyframes worksBorder {
-  from {
-    border: 3px solid color(primary);
+@keyframes worksBorderTop {
+  0% {
+    border-top-color: color(accent);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    //border: 3px solid color(primary);
   }
-  to {
-    border: 3px solid color(accent);
+  16%{
+    width: 100%;
+    height: 0;
+    border-top-color: color(accent);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: color(accent);
+  }
+  33% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: color(accent);
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
   
+}
+@keyframes worksBorderBottom {
+  33% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: color(accent);
+    border-right-color: transparent;
+  }
+  40% {
+    width: 0;
+    height: 100%;
+    border-top-color: transparent;
+    border-bottom-color: color(accent);
+    border-left-color: color(accent);
+    border-right-color: transparent;
+    //border: 3px solid color(primary);
+  }
+  65%{
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-bottom-color: color(accent);
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  100%{
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
 }
