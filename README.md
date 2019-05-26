@@ -7,7 +7,7 @@ I hope you enjoy :D
 
 ## Used sources
 Thanks to:
-[FontAwesome project](https://choosealicense.com/licenses/mit/)
+[FontAwesome project](https://fontawesome.com/)
 
 ## License
 [GNU 3.0](https://github.com/Pkcarreno/JustPk/blob/master/LICENSE)
