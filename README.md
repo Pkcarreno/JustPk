@@ -10,4 +10,4 @@ Thanks to:
 [FontAwesome project](https://fontawesome.com/)
 
 ## License
-[GNU 3.0](https://github.com/Pkcarreno/JustPk/blob/master/LICENSE)
+[GPL 3.0](https://github.com/Pkcarreno/JustPk/blob/master/LICENSE)
