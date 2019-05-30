@@ -178,7 +178,7 @@ body {
     #subtitle {
       font-family: $font2, normal;
       color: color(primary-light);
-      text-shadow: 0 10px 20px rgba(0,0,0,.2);
+      text-shadow: 0 5px 10px rgba(0,0,0,.1);
       text-align: center
     }
   }
@@ -358,7 +358,7 @@ body {
 
           p {
             font-size: 1.6em;
-            text-shadow: 0 10px 20px rgba(0,0,0,.2);
+            text-shadow: 0 5px 10px rgba(0,0,0,.1);
             color: color(primary-light)
           }
           @include desktop {
