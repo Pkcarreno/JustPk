@@ -36,8 +36,10 @@ src: local('Montserrat Bold'), local('Montserrat-Bold'),
 }
 
 $color:(
-  primary: #ffe66b,
-  accent: #222222
+  accent: #ffe66b,
+  primary: #222222,
+  links: #999999,
+  versionBox: #444444
 );
 @function color($color_name) {
   @return map-get($color, $color_name)
@@ -46,33 +48,45 @@ $color:(
 *{
     font-family: 'Inconsolata', Fallback;
     margin: 0;
+    color: color(primary);
 }
-html, body, #root, #App{
+html, body, #root, #context{
     height: 100%;
 }
 body{
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 #root{
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 16px;
+    padding-bottom: 16px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
 }
 button{
-    //boton
+    display: block;
+    background-color: grey; /* cambiar */
+    border: none;
+    padding: 0;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+a{
+    color: color(links);
 }
 #menuDeskt{
     height: 100%;
-    width: 17em;
+    flex-basis: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     #logo{
-        color: color(primary);
-        font-size: 64px;
+        color: color(accent);
+        font-size: 4em;
         margin-left: 49px;
         margin-top: 50px;
     }
@@ -80,10 +94,43 @@ button{
         display: flex;
         flex-direction: column;
     }
+    #buttonDiv{
+        
+    }
 }
+#context{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    #aboutMeDescription{
+        height: 100%;
+        margin-left: 16px;
+        display: flex;
+        align-items: center;
+        p{
+            font-size: 36px;
+            line-height: 98px;
+            #name{
+                font-size: 72px;
+                color: color(accent);
+            }
+            #career{
+                font-size: 48px;
+                color: color(accent);
+            }
+            #extra{
+                font-size: 18px;
+            }
+        }
+    }
+}
+
 #versionBox{
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    p{
+        color: color(versionBox);
+    }
 }

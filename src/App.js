@@ -19,7 +19,7 @@ class Menu extends Component {
       <div id='menuDeskt'>
         {console.log("menu: ",this.props.text)}
         <p id='logo'>Pk</p>
-        <div className='primerDiv'>
+        <div id='buttonDiv'>
           <button>{this.props.text.button1}</button>
           <button>{this.props.text.button2}</button>
         </div>
@@ -47,6 +47,24 @@ class Menu extends Component {
   }
 }
 
+function AboutMe() {
+  return(
+    <div id='aboutMeDescription'>
+      <p>Soy <span id='name'>Pedro carreño</span>, un placer conocerte! <br />Hace tres años que empece mi carrera como <span id='career'>ingeniero de sistemas</span> y desde entonces e hecho unos cuantos proyectos Cools <br />Mi fuerte el <u>desarrollo web</u>, <u>React.js</u> y <u>Node.js</u>.<span id='extra'>(Todo el mundo tiene una pagina web asi que decidi hacerme una :D)</span></p>
+    </div>
+  )
+}
+class Context extends Component{
+  render(){
+    return(
+      <div id='context'>
+        <AboutMe/>
+        <Appversion/>
+      </div>
+    )
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +79,7 @@ class App extends Component {
     return(
       <React.Fragment>
         <Menu text={this.state.menu}/>
-        <Appversion/>
+        <Context/>
       </React.Fragment>
     )
   }
