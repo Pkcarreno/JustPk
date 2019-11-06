@@ -1,0 +1,89 @@
+/* inconsolata-regular - latin */
+@font-face {
+font-family: 'Inconsolata';
+font-style: normal;
+font-weight: 400;
+src: local('Inconsolata Regular'), local('Inconsolata-Regular'),
+        url('./Assets/fonts/Inconsolata/inconsolata-v18-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./Assets/fonts/Inconsolata/inconsolata-v18-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inconsolata-700 - latin */
+@font-face {
+font-family: 'Inconsolata';
+font-style: bold;
+font-weight: 700;
+src: local('Inconsolata Bold'), local('Inconsolata-Bold'),
+        url('./Assets/fonts/Inconsolata/inconsolata-v18-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./Assets/fonts/Inconsolata/inconsolata-v18-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-regular - latin */
+@font-face {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+src: local('Montserrat Regular'), local('Montserrat-Regular'),
+        url('./Assets/fonts/Montserrat/montserrat-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./Assets/fonts/Montserrat/montserrat-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+font-family: 'Montserrat';
+font-style: bold;
+font-weight: 700;
+src: local('Montserrat Bold'), local('Montserrat-Bold'),
+        url('./Assets/fonts/Montserrat/montserrat-v14-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./Assets/fonts/Montserrat/montserrat-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+$color:(
+  primary: #ffe66b,
+  accent: #222222
+);
+@function color($color_name) {
+  @return map-get($color, $color_name)
+}
+
+*{
+    font-family: 'Inconsolata', Fallback;
+    margin: 0;
+}
+html, body, #root, #App{
+    height: 100%;
+}
+body{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+#root{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+button{
+    //boton
+}
+#menuDeskt{
+    height: 100%;
+    width: 17em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    #logo{
+        color: color(primary);
+        font-size: 64px;
+        margin-left: 49px;
+        margin-top: 50px;
+    }
+    .primerDiv{
+        display: flex;
+        flex-direction: column;
+    }
+}
+#versionBox{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
