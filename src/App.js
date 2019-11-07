@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import packageJson from '../package.json';
 import menuText from './Assets/Texts/menu.json';
+import aboutMeText from './Assets/Texts/aboutMe.json';
 
 class Appversion extends Component {
   render(){
@@ -54,18 +55,20 @@ class Menu extends Component {
   }
 }
 
-function AboutMe() {
-  return(
-    <div id='aboutMeDescription'>
-      <p>Soy <span id='name'>Pedro carreño</span>, un placer conocerte! <br />Hace tres años que empece mi carrera como <span id='career'>ingeniero de sistemas</span> y desde entonces e hecho unos cuantos proyectos Cools <br />Mi fuerte el <u>desarrollo web</u>, <u>React.js</u> y <u>Node.js</u>.<span id='extra'>(Todo el mundo tiene una pagina web asi que decidi hacerme una :D)</span></p>
-    </div>
-  )
+class AboutMe extends Component {
+  render(){
+    return(
+      <div id='aboutMeDescription'>
+        <p>{this.props.text1.text1}<span id='name'>{this.props.text1.name}</span>{this.props.text1.text2}<br/>{this.props.text1.text3}<span id='career'>{this.props.text1.text4}</span>{this.props.text1.text5}<br />{this.props.text1.text6}<u>{this.props.text1.text7}</u>{this.props.text1.text8}<u>{this.props.text1.text9}</u>{this.props.text1.text10}<u>{this.props.text1.text11}</u>{this.props.text1.text12}<span id='extra'>{this.props.text1.text13}</span></p>
+      </div>
+    )
+  }
 }
 class Context extends Component{
   render(){
     return(
       <div id='context'>
-        <AboutMe/>
+        <AboutMe text1={this.props.text1}/>
         <Appversion/>
       </div>
     )
@@ -76,7 +79,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menu: menuText.language.find(e => (e.lang === this.state.lang))
+      menu: menuText.language.find(e => (e.lang === this.state.lang)),
+      aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang))
     };
   }
   state = {
@@ -86,7 +90,7 @@ class App extends Component {
     return(
       <React.Fragment>
         <Menu text={this.state.menu}/>
-        <Context/>
+        <Context text1={this.state.aboutMe}/>
       </React.Fragment>
     )
   }
