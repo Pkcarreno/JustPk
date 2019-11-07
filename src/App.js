@@ -19,14 +19,14 @@ class Menu extends Component {
       <div id='menuDeskt'>
         {console.log("menu: ",this.props.text)}
         <p id='logo'>Pk</p>
-        <div id='buttonDiv'>
-          <button>{this.props.text.button1}</button>
-          <button>{this.props.text.button2}</button>
+        <div>
+          <button className='button active'>{this.props.text.button1}</button>
+          <button className='button'>{this.props.text.button2}</button>
         </div>
   
-        <div>
-            <p><a href=''>English</a> - <a href=''>Español</a></p>
-          </div>
+        <div id='language'>
+          <p><button className='button2'>English</button> - <button className='button2 on'>Español</button></p>
+        </div>
   
         <div className='primerDiv'>
           <div>

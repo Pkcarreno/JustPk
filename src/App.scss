@@ -64,17 +64,7 @@ body{
     display: flex;
     flex-direction: row;
 }
-button{
-    display: block;
-    background-color: grey; /* cambiar */
-    border: none;
-    padding: 0;
-    width: auto;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5em;
-    margin-bottom: 1em;
-}
+
 a{
     color: color(links);
 }
@@ -94,8 +84,47 @@ a{
         display: flex;
         flex-direction: column;
     }
-    #buttonDiv{
-        
+    .button{
+        display: block;
+        background-color: transparent; /* cambiar */
+        border: none;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+        &:focus, &:hover{
+            transition: 0.2s;
+            background-color: color(accent);
+        }
+    }
+    .active{       //button enfasis
+        color: white;
+        background-color: black;
+        &:focus, &:hover{
+            background-color: black;
+        }
+    }
+    #language{
+        margin-left: 72px;
+        .button2{
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            text-align: center;
+            text-decoration: underline;
+            display: inline;
+            font-size: 1em;
+            color: color(links);
+            &:hover{
+                transition: 0.2s;
+                color: color(primary);
+            }
+        }
+        .on{       //button enfasis
+            color: black;
+            text-decoration: none;
+        }
     }
 }
 #context{
