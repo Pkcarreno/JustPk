@@ -10,7 +10,7 @@ src: local('Inconsolata Regular'), local('Inconsolata-Regular'),
 /* inconsolata-700 - latin */
 @font-face {
 font-family: 'Inconsolata';
-font-style: bold;
+font-style: normal;
 font-weight: 700;
 src: local('Inconsolata Bold'), local('Inconsolata-Bold'),
         url('./Assets/fonts/Inconsolata/inconsolata-v18-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -28,7 +28,7 @@ src: local('Montserrat Regular'), local('Montserrat-Regular'),
 /* montserrat-700 - latin */
 @font-face {
 font-family: 'Montserrat';
-font-style: bold;
+font-style: normal;
 font-weight: 700;
 src: local('Montserrat Bold'), local('Montserrat-Bold'),
         url('./Assets/fonts/Montserrat/montserrat-v14-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -67,6 +67,10 @@ body{
 
 a{
     color: color(links);
+    &:hover{
+        transition: 0.2s;
+        color: color(primary);
+    }
 }
 #menuDeskt{
     height: 100%;
@@ -126,14 +130,40 @@ a{
             text-decoration: none;
         }
     }
+    #rrss{
+        margin-bottom: 20px;
+        a{
+            margin-right: 9px;
+            svg{
+                height: 39px;
+                path{
+                    color: color(versionBox);
+                }
+                &:hover{
+                    path{
+                        transition: 0.1s;
+                        color: color(accent);
+                    }
+                }
+            }
+        }
+    }
+    .separator{
+        margin-bottom: 20px;
+    }
+    #freelancing{
+        a{
+            margin-right: 18px;
+        }
+    }
 }
 #context{
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-left: 16px;
     #aboutMeDescription{
         height: 100%;
-        margin-left: 16px;
         display: flex;
         align-items: center;
         p{
@@ -141,10 +171,12 @@ a{
             line-height: 98px;
             #name{
                 font-size: 72px;
+                font-weight: bold;
                 color: color(accent);
             }
             #career{
                 font-size: 48px;
+                font-weight: bold;
                 color: color(accent);
             }
             #extra{
