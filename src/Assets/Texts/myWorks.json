@@ -1,0 +1,17 @@
+{ 
+    "language": [    
+        {
+            "lang":"es",
+            "title": "JustPk",
+            "description": "",
+            "date": "Noviembre "
+        },
+        {
+            "lang":"en",
+            "img": "",
+            "title": "JustPk",
+            "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
+            "date": "Noviembre "
+        }
+    ]
+}

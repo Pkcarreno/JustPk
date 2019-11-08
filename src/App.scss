@@ -56,6 +56,7 @@ html, body, #root, #context{
 body{
     margin-left: 16px;
     margin-right: 16px;
+    overflow: hidden;
 }
 #root{
     padding-top: 16px;
@@ -97,6 +98,8 @@ a{
         text-decoration: none;
         font-size: 1.5em;
         margin-bottom: 1em;
+    }
+    .buttonEffect{
         &:focus, &:hover{
             transition: 0.2s;
             background-color: color(accent);
@@ -105,9 +108,6 @@ a{
     .active{       //button enfasis
         color: white;
         background-color: black;
-        &:focus, &:hover{
-            background-color: black;
-        }
     }
     #language{
         margin-left: 72px;
@@ -120,6 +120,8 @@ a{
             display: inline;
             font-size: 1em;
             color: color(links);
+        }
+        .button2Effect{
             &:hover{
                 transition: 0.2s;
                 color: color(primary);
@@ -181,6 +183,47 @@ a{
             }
             #extra{
                 font-size: 18px;
+            }
+        }
+    }
+    #myWorkRoot{
+        height: 100%;
+        padding-top: 48px;
+        overflow: auto;
+        #workBox{
+            width: 14.5em;
+            background-color: black;
+            border-radius: 3px;
+            margin-bottom: 80px;
+            margin-right: 120px;
+            img{
+                width: 14.5em;
+                margin-bottom: 12px;
+            }
+            span{
+                background-color: white;
+                color: color(primary);
+            }
+            p{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            #workTitle{
+                margin-bottom: 12px;
+                font-size: 1.5em;
+                span{
+                    &::after, &::before{
+                        content:'-';
+                    }
+                }
+            }
+            #workDescription{
+                line-height: 1.5em;
+                margin-bottom: 16px;
+            }
+            #workDate{
+                padding-bottom: 8px;
+                text-align: right;
             }
         }
     }

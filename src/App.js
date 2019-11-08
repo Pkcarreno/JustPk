@@ -3,6 +3,7 @@ import './App.scss';
 import packageJson from '../package.json';
 import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
+import image1 from './Assets/Image/justpk4.png';
 
 class Appversion extends Component {
   render(){
@@ -21,11 +22,11 @@ class Menu extends Component {
         <p id='logo'>Pk</p>
         <div>
           <button className='button active'>{this.props.text.button1}</button>
-          <button className='button'>{this.props.text.button2}</button>
+          <button className='button buttonEffect'>{this.props.text.button2}</button>
         </div>
   
         <div id='language'>
-          <p><button className='button2'>English</button> - <button className='button2 on'>Español</button></p>
+          <p><button className='button2 button2Effect'>English</button> - <button className='button2 on'>Español</button></p>
         </div>
   
         <div className='primerDiv'>
@@ -64,11 +65,31 @@ class AboutMe extends Component {
     )
   }
 }
-class Context extends Component{
+
+class MyWorks extends Component {
+  render(){
+    return(
+      <div id='workBox'>
+        <img id='workImage' src={image1}></img>
+        <p id='workTitle'><span>JustPk</span></p>
+        <p id='workDescription'><span>Este proyecto fue hecho en react.js y estoy muy feliz de ello.</span></p>
+        <p id='workDate'><span>noviembre / 2019</span></p>
+      </div>
+    )
+  }
+}
+
+class Context extends Component {
   render(){
     return(
       <div id='context'>
-        <AboutMe text1={this.props.text1}/>
+        {/*<AboutMe text1={this.props.text1}/>*/}
+        <div id='myWorkRoot'>
+          <MyWorks/>
+          <MyWorks/>
+          <MyWorks/>
+          <MyWorks/>
+        </div>
         <Appversion/>
       </div>
     )
@@ -84,7 +105,7 @@ class App extends Component {
     };
   }
   state = {
-    lang: 'español'
+    lang: 'es'
   }
   render(){
     return(

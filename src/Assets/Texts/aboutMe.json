@@ -1,7 +1,7 @@
 {
     "language": [    
         {
-            "lang":"español",
+            "lang":"es",
             "text1": "Soy ",
             "name": "Pedro carreño",
             "text2": ", un placer conocerte!",
@@ -18,7 +18,7 @@
             "text13": "(Todo el mundo tiene una pagina web asi que decidi hacerme una :D)"    
         },
         {
-            "lang":"english",
+            "lang":"en",
             "button1": "Sobfdf",
             "button2": "Mis tdfdfos",
             "curriculum1": "dfdfrgar",
