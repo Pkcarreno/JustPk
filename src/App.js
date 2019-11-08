@@ -3,6 +3,7 @@ import './App.scss';
 import packageJson from '../package.json';
 import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
+import myWork from './Assets/Texts/myWorks.json';
 import image1 from './Assets/Image/justpk4.png';
 
 class Appversion extends Component {
@@ -71,9 +72,10 @@ class MyWorks extends Component {
     return(
       <div id='workBox'>
         <img id='workImage' src={image1}></img>
-        <p id='workTitle'><span>JustPk</span></p>
-        <p id='workDescription'><span>Este proyecto fue hecho en react.js y estoy muy feliz de ello.</span></p>
-        <p id='workDate'><span>noviembre / 2019</span></p>
+        <p id='workTitle'><span>{this.props.text2.title}</span></p>
+        <p id='workDescription'><span>{this.props.text2.description}</span></p>
+        <a href={this.props.text2.link}>{this.props.text2.direction}</a>
+        <p id='workDate'><span>{this.props.text2.date}</span></p>
       </div>
     )
   }
@@ -81,15 +83,22 @@ class MyWorks extends Component {
 
 class Context extends Component {
   render(){
+    function aboutMe(text1, text2, show){
+      if (show === 'about') {
+        return(<AboutMe text1={text1}/>)
+      }
+      if (show === 'work') {
+        return(
+          <div id='myWorkRoot'>
+            <MyWorks text2={text2.card[0]}/>
+          </div>
+        )
+      }
+    }
     return(
       <div id='context'>
         {/*<AboutMe text1={this.props.text1}/>*/}
-        <div id='myWorkRoot'>
-          <MyWorks/>
-          <MyWorks/>
-          <MyWorks/>
-          <MyWorks/>
-        </div>
+        {aboutMe(this.props.text1,this.props.text2,this.props.show)}
         <Appversion/>
       </div>
     )
@@ -100,18 +109,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      show: 'work',
       menu: menuText.language.find(e => (e.lang === this.state.lang)),
-      aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang))
+      aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang)),
+      myWork: myWork.language.find(e => (e.lang === this.state.lang))
     };
   }
   state = {
-    lang: 'es'
+    lang: 'es',
   }
   render(){
     return(
       <React.Fragment>
         <Menu text={this.state.menu}/>
-        <Context text1={this.state.aboutMe}/>
+        <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
       </React.Fragment>
     )
   }

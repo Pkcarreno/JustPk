@@ -68,13 +68,14 @@ body{
 
 a{
     color: color(links);
+    transition: 0.2s;
     &:hover{
-        transition: 0.2s;
         color: color(primary);
     }
 }
 #menuDeskt{
     height: 100%;
+    min-width: 257px;
     flex-basis: 30%;
     display: flex;
     flex-direction: column;
@@ -100,8 +101,8 @@ a{
         margin-bottom: 1em;
     }
     .buttonEffect{
+        transition: 0.2s;
         &:focus, &:hover{
-            transition: 0.2s;
             background-color: color(accent);
         }
     }
@@ -122,8 +123,8 @@ a{
             color: color(links);
         }
         .button2Effect{
+            transition: 0.2s;
             &:hover{
-                transition: 0.2s;
                 color: color(primary);
             }
         }
@@ -140,10 +141,10 @@ a{
                 height: 39px;
                 path{
                     color: color(versionBox);
+                    transition: 0.1s;
                 }
                 &:hover{
                     path{
-                        transition: 0.1s;
                         color: color(accent);
                     }
                 }
@@ -188,23 +189,37 @@ a{
     }
     #myWorkRoot{
         height: 100%;
-        padding-top: 48px;
+        margin-top: 48px;
         overflow: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
         #workBox{
+            flex: 0.65 0 auto;
             width: 14.5em;
+            height: fit-content;
             background-color: black;
             border-radius: 3px;
             margin-bottom: 80px;
-            margin-right: 120px;
+            margin-right: 80px;
             img{
-                width: 14.5em;
+                width: 100%;
                 margin-bottom: 12px;
             }
             span{
                 background-color: white;
                 color: color(primary);
             }
-            p{
+            a{
+                background-color: color(accent);
+                color: color(primary);
+                font-weight: bold;
+                &:hover{
+                    background-color: white;
+                }
+            }
+            p, a{
                 padding-left: 16px;
                 padding-right: 16px;
             }

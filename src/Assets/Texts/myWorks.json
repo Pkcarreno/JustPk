@@ -2,16 +2,41 @@
     "language": [    
         {
             "lang":"es",
-            "title": "JustPk",
-            "description": "",
-            "date": "Noviembre "
+            "card": [
+                {
+                    "title": "JustPk",
+                    "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
+                    "date": "Noviembre 2019",
+                    "link": "https://github.com/Pkcarreno/JustPk",
+                    "direction":"Github"
+                },
+                {
+                    "title": "JustNoPk",
+                    "description": "aqui debe ir algo muy contundente pero se me olvido juajuajuajuajuajuajuajua juajua",
+                    "date": "Noviembre 201*",
+                    "link": "",
+                    "direction":"github"
+                }
+            ]
         },
         {
             "lang":"en",
-            "img": "",
-            "title": "JustPk",
-            "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
-            "date": "Noviembre "
+            "card": [
+                {
+                    "title": "JustPk",
+                    "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
+                    "date": "Noviembre 2019",
+                    "link": "",
+                    "direction":"github"
+                },
+                {
+                    "title": "JustNoPk",
+                    "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
+                    "date": "Noviembre 201*",
+                    "link": "",
+                    "direction":"github"
+                }
+            ]
         }
     ]
 }
