@@ -19,10 +19,20 @@
         },
         {
             "lang":"en",
-            "button1": "Sobfdf",
-            "button2": "Mis tdfdfos",
-            "curriculum1": "dfdfrgar",
-            "curriculum2": "mdfdfF"
+            "text1": "Ya no Soy ",
+            "name": "Pedro carreño",
+            "text2": ", un placer conocerte!",
+            "text3": "Hace tres años que empece mi carrera como ",
+            "text4": "ingeniero de sistemas",
+            "text5": " y desde entonces e hecho unos cuantos proyectos Cools ",
+            "text6": "Mi fuerte el ",
+            "text7": "desarrollo web",
+            "text8": ", ",
+            "text9": "React.js",
+            "text10": " y ",
+            "text11": "Node.js",
+            "text12": ".",
+            "text13": "(Todo el mundo tiene una pagina web asi que decidi hacerme una :D)"  
         }
     ]
 }

@@ -18,16 +18,22 @@ class Appversion extends Component {
 
 class Menu extends Component {
   render(){
+    const aboutButton = (this.props.show === 'about' ? 'active':'buttonEffect');
+    const workButton = (this.props.show === 'work' ? 'active':'buttonEffect');
+    const enButton = (this.props.lang === 'en' ? 'on':'button2Effect');
+    const esButton = (this.props.lang === 'es' ? 'on':'button2Effect');
     return(
       <div id='menuDeskt'>
         <p id='logo'>Pk</p>
         <div>
-          <button className='button active'>{this.props.text.button1}</button>
-          <button className='button buttonEffect'>{this.props.text.button2}</button>
+          <button className={'button '+ aboutButton} onClick={e => {this.props.toggleContext()}}>{this.props.text.button1}</button>
+          <button className={'button '+ workButton} onClick={e => {this.props.toggleContext()}}>{this.props.text.button2}</button>
         </div>
   
         <div id='language'>
-          <p><button className='button2 button2Effect'>English</button> - <button className='button2 on'>Español</button></p>
+          <p><button className={'button2 '+ enButton} onClick={
+              e => {this.props.toggleLang('en')}
+            }>English</button> - <button className={'button2 '+ esButton} onClick={e => {this.props.toggleLang('es')}}>Español</button></p>
         </div>
   
         <div className='primerDiv'>
@@ -70,35 +76,38 @@ class AboutMe extends Component {
 class MyWorks extends Component {
   render(){
     return(
-      <div id='workBox'>
-        <img id='workImage' src={image1}></img>
-        <p id='workTitle'><span>{this.props.text2.title}</span></p>
-        <p id='workDescription'><span>{this.props.text2.description}</span></p>
-        <a href={this.props.text2.link}>{this.props.text2.direction}</a>
-        <p id='workDate'><span>{this.props.text2.date}</span></p>
-      </div>
+      <React.Fragment>
+        {this.props.text2.card.map(e => 
+          <div id='workBox'>
+          <img id='workImage' src={image1}></img>
+          <p id='workTitle'><span>{e.title}</span></p>
+          <p id='workDescription'><span>{e.description}</span></p>
+          <a href={e.link}>{e.direction}</a>
+          <p id='workDate'><span>{e.date}</span></p>
+        </div>
+        )}
+      </React.Fragment>
     )
   }
 }
 
 class Context extends Component {
   render(){
-    function aboutMe(text1, text2, show){
+    function contextState(text1, text2, show){
       if (show === 'about') {
         return(<AboutMe text1={text1}/>)
       }
       if (show === 'work') {
         return(
           <div id='myWorkRoot'>
-            <MyWorks text2={text2.card[0]}/>
+            <MyWorks text2={text2}/>
           </div>
         )
       }
     }
     return(
       <div id='context'>
-        {/*<AboutMe text1={this.props.text1}/>*/}
-        {aboutMe(this.props.text1,this.props.text2,this.props.show)}
+        {contextState(this.props.text1,this.props.text2,this.props.show)}
         <Appversion/>
       </div>
     )
@@ -109,19 +118,38 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: 'work',
+      lang: 'es',
+      show: 'about',
       menu: menuText.language.find(e => (e.lang === this.state.lang)),
       aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang)),
       myWork: myWork.language.find(e => (e.lang === this.state.lang))
     };
   }
   state = {
-    lang: 'es',
+    lang: 'es'
   }
+
+  toggleContext = () => {
+    this.setState({
+      show: (this.state.show === 'about'? 'work': 'about')
+    })
+  }
+  toggleLang = (i) => {
+    console.log(i)
+    this.setState({
+      lang: i,
+      menu: menuText.language.find(e => (e.lang === this.state.lang)),
+      aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang)),
+      myWork: myWork.language.find(e => (e.lang === this.state.lang))
+    })
+
+    console.log(this.state.lang)
+  }
+
   render(){
     return(
       <React.Fragment>
-        <Menu text={this.state.menu}/>
+        <Menu text={this.state.menu} toggleContext={this.toggleContext.bind(this)} toggleLang={this.toggleLang.bind(this)} show={this.state.show} lang={this.state.lang}/>
         <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
       </React.Fragment>
     )
