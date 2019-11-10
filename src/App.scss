@@ -129,9 +129,9 @@ a{
             display: inline;
             font-size: 1em;
             color: color(links);
+            transition: 0.2s;
         }
         .button2Effect{
-            transition: 0.2s;
             &:hover{
                 color: color(primary);
             }
@@ -205,7 +205,7 @@ a{
         flex-flow: row wrap;
         justify-content: space-around;
         #workBox{
-            flex: 0.65 0 auto;
+            flex: 0.5 0 auto;
             width: 14.5em;
             height: fit-content;
             background-color: black;

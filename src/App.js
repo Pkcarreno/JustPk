@@ -5,6 +5,7 @@ import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
 import image1 from './Assets/Image/justpk4.png';
+import {Helmet} from 'react-helmet';
 
 class Appversion extends Component {
   render(){
@@ -53,7 +54,7 @@ class Menu extends Component {
           </div>
           <div className='separator' id='freelancing'>
             <a href='https://www.fiverr.com/pkcarreno'>Fiverr</a>
-            <a href=''>Freelancer</a>
+            {/*<a href=''>Freelancer</a>*/}
           </div>
           <a className='separator' href='mailto:scenic.pk@gmail.com'>scenic.pk@gmail.com</a>
           <p>{this.props.text.curriculum1} <a href=''>{this.props.text.curriculum2}</a></p>
@@ -147,6 +148,9 @@ class App extends Component {
   render(){
     return(
       <React.Fragment>
+        <Helmet>
+          <html lang={this.state.lang} />
+        </Helmet>
         <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
         <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
       </React.Fragment>

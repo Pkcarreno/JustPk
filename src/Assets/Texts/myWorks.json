@@ -5,17 +5,10 @@
             "card": [
                 {
                     "title": "JustPk",
-                    "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
+                    "description": "Este proyecto esta hecho con React.js como demostracón de mis habilidades en dicho entorno.",
                     "date": "Noviembre 2019",
                     "link": "https://github.com/Pkcarreno/JustPk",
                     "direction":"Github"
-                },
-                {
-                    "title": "JustNoPk",
-                    "description": "aqui debe ir algo muy contundente pero se me olvido juajuajuajuajuajuajuajua juajua",
-                    "date": "Noviembre 201*",
-                    "link": "",
-                    "direction":"github"
                 }
             ]
         },
@@ -24,17 +17,10 @@
             "card": [
                 {
                     "title": "JustPk",
-                    "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
-                    "date": "Noviembre 2019",
-                    "link": "",
-                    "direction":"github"
-                },
-                {
-                    "title": "JustNoPk",
-                    "description": "Este proyecto fue hecho en react.js y estoy muy feliz de ello.",
-                    "date": "Noviembre 201*",
-                    "link": "",
-                    "direction":"github"
+                    "description": "This project was made in React.js as a demostration of my skills in that framework.",
+                    "date": "November 2019",
+                    "link": "https://github.com/Pkcarreno/JustPk",
+                    "direction":"Github"
                 }
             ]
         }
