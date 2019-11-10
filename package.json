@@ -2,8 +2,11 @@
   "name": "justpk",
   "version": "4.0.0",
   "private": true,
+  "homepage": "https://github.com/Pkcarreno/JustPk",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "^16.11.0",
+    "react-device-detect": "^1.9.10",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "react-scripts": "3.2.0"
@@ -12,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

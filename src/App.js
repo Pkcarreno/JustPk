@@ -6,6 +6,12 @@ import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
 import image1 from './Assets/Image/justpk4.png';
 import {Helmet} from 'react-helmet';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 class Appversion extends Component {
   render(){
@@ -153,6 +159,12 @@ class App extends Component {
         </Helmet>
         <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
         <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
+        {/*<BrowserView>
+          
+        </BrowserView>
+        <MobileView>
+          <h1> This is rendered only on mobile </h1>
+        </MobileView>*/}
       </React.Fragment>
     )
   }
