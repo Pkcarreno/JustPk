@@ -41,6 +41,8 @@ $color:(
   links: #999999,
   versionBox: #444444
 );
+$fontSize: 18px;
+$fontExpansionSize: 1.2vw;
 @function color($color_name) {
   @return map-get($color, $color_name)
 }
@@ -60,7 +62,7 @@ body{
 }
 #root{
     padding-top: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 24px;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -113,11 +115,15 @@ a{
         pointer-events: none;
     }
     #language{
-        margin-left: 72px;
+        margin-left: 64px;
+        display: flex;
+        flex-direction: row;
         .button2{
             border: none;
             background-color: transparent;
             padding: 0;
+            margin-right: 8px;
+            margin-left: 8px;
             text-align: center;
             text-decoration: underline;
             display: inline;
@@ -173,20 +179,20 @@ a{
         display: flex;
         align-items: center;
         p{
-            font-size: 36px;
-            line-height: 98px;
+            font-size: calc(#{$fontSize} + #{$fontExpansionSize});
+            line-height: calc((#{$fontSize}/4) + #{$fontExpansionSize}*6);
             #name{
-                font-size: 72px;
+                font-size: calc((#{$fontSize}*2) + #{$fontExpansionSize});
                 font-weight: bold;
                 color: color(accent);
             }
             #career{
-                font-size: 48px;
+                font-size: calc((#{$fontSize}*1.3) + #{$fontExpansionSize});
                 font-weight: bold;
                 color: color(accent);
             }
             #extra{
-                font-size: 18px;
+                font-size: calc((#{$fontSize}*0.47) + #{$fontExpansionSize});
             }
         }
     }
@@ -246,7 +252,6 @@ a{
         }
     }
 }
-
 #versionBox{
     box-sizing: border-box;
     display: flex;

@@ -26,14 +26,14 @@ class Menu extends Component {
       <div id='menuDeskt'>
         <p id='logo'>Pk</p>
         <div>
-          <button className={'button '+ aboutButton} onClick={e => {this.props.toggleContext()}}>{this.props.text.button1}</button>
-          <button className={'button '+ workButton} onClick={e => {this.props.toggleContext()}}>{this.props.text.button2}</button>
+          <button className={'button '+ aboutButton} onClick={e => {this.props.toggleContext('about')}}>{this.props.text.button1}</button>
+          <button className={'button '+ workButton} onClick={e => {this.props.toggleContext('work')}}>{this.props.text.button2}</button>
         </div>
   
         <div id='language'>
-          <p><button className={'button2 '+ enButton} onClick={
-              e => {this.props.toggleLang('en')}
-            }>English</button> - <button className={'button2 '+ esButton} onClick={e => {this.props.toggleLang('es')}}>Español</button></p>
+          <button className={'button2 '+ enButton} onClick={e => {this.props.toggleLang('en')}}>English</button>
+          <p> - </p>
+          <button className={'button2 '+ esButton} onClick={e => {this.props.toggleLang('es')}}>Español</button>
         </div>
   
         <div className='primerDiv'>
@@ -120,36 +120,34 @@ class App extends Component {
     this.state = {
       lang: 'es',
       show: 'about',
-      menu: menuText.language.find(e => (e.lang === this.state.lang)),
-      aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang)),
-      myWork: myWork.language.find(e => (e.lang === this.state.lang))
+      menu: menuText.language.find(e => (e.lang === 'es')),
+      aboutMe: aboutMeText.language.find(e => (e.lang === 'es')),
+      myWork: myWork.language.find(e => (e.lang === 'es'))
     };
   }
-  state = {
-    lang: 'es'
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.lang !== this.state.lang) {
+      this.setState({
+        menu: menuText.language.find(e => (e.lang === this.state.lang)),
+        aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang)),
+        myWork: myWork.language.find(e => (e.lang === this.state.lang))
+      });
+    }
   }
-
-  toggleContext = () => {
+  toggleContext = (i) => {
     this.setState({
-      show: (this.state.show === 'about'? 'work': 'about')
+      show: i
     })
   }
   toggleLang = (i) => {
-    console.log(i)
     this.setState({
-      lang: i,
-      menu: menuText.language.find(e => (e.lang === this.state.lang)),
-      aboutMe: aboutMeText.language.find(e => (e.lang === this.state.lang)),
-      myWork: myWork.language.find(e => (e.lang === this.state.lang))
+      lang: i
     })
-
-    console.log(this.state.lang)
   }
-
   render(){
     return(
       <React.Fragment>
-        <Menu text={this.state.menu} toggleContext={this.toggleContext.bind(this)} toggleLang={this.toggleLang.bind(this)} show={this.state.show} lang={this.state.lang}/>
+        <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
         <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
       </React.Fragment>
     )
