@@ -7,7 +7,7 @@
             "text2": ", un placer conocerte!",
             "text3": "Hace tres años que empece mi carrera como ",
             "text4": "ingeniero de sistemas",
-            "text5": " y desde entonces e hecho unos cuantos proyectos Cools ",
+            "text5": " y desde entonces he hecho unos cuantos proyectos Cools ",
             "text6": "Mi fuerte el ",
             "text7": "desarrollo web",
             "text8": ", ",
@@ -19,20 +19,20 @@
         },
         {
             "lang":"en",
-            "text1": "Ya no Soy ",
+            "text1": "I'm ",
             "name": "Pedro carreño",
-            "text2": ", un placer conocerte!",
-            "text3": "Hace tres años que empece mi carrera como ",
-            "text4": "ingeniero de sistemas",
-            "text5": " y desde entonces e hecho unos cuantos proyectos Cools ",
-            "text6": "Mi fuerte el ",
-            "text7": "desarrollo web",
+            "text2": ", nice to meet you!",
+            "text3": "Since three years ago i started my career as a ",
+            "text4": "systems engineer",
+            "text5": " and since then i have done a few cools projects ",
+            "text6": "I am strong in ",
+            "text7": "web development",
             "text8": ", ",
             "text9": "React.js",
-            "text10": " y ",
+            "text10": " and ",
             "text11": "Node.js",
             "text12": ".",
-            "text13": "(Todo el mundo tiene una pagina web asi que decidi hacerme una :D)"  
+            "text13": "(Everyone has their page, so I decided to make me a page too :D)"  
         }
     ]
 }

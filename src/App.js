@@ -6,12 +6,6 @@ import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
 import image1 from './Assets/Image/justpk4.png';
 import {Helmet} from 'react-helmet';
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile
-} from "react-device-detect";
 
 class Appversion extends Component {
   render(){
@@ -100,23 +94,58 @@ class MyWorks extends Component {
 
 class Context extends Component {
   render(){
-    function contextState(text1, text2, show){
+    function goBackIcon(isMobile){
+      if (isMobile) {
+        return(
+          <React.Fragment>
+            <button className='button'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            </button>
+          </React.Fragment>
+        )
+      }
+    }
+    function contextState(text1, text2, show, isMobile){
       if (show === 'about') {
-        return(<AboutMe text1={text1}/>)
+        return(
+          <React.Fragment>
+            <AboutMe text1={text1}/>
+          </React.Fragment>
+        )
       }
       if (show === 'work') {
         return(
-          <div id='myWorkRoot'>
-            <MyWorks text2={text2}/>
-          </div>
+          <React.Fragment>
+            <div id='myWorkRoot'>
+              <MyWorks text2={text2}/>
+            </div>
+          </React.Fragment>
         )
       }
     }
     return(
       <div id='context'>
+        {goBackIcon(this.props.isMobile)}
         {contextState(this.props.text1,this.props.text2,this.props.show)}
-        <Appversion/>
       </div>
+    )
+  }
+}
+
+class ContextMobile extends Component {
+  render(){
+    function contextState(text1, toggleContext, toggleLang, text2, text3, showMobileVer, show, lang , isMobile){
+      if (showMobileVer === 'menu') {
+        return(<Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile}/>)
+      }
+      if (showMobileVer === 'context') {
+        return(<Context text1={text2} text2={text3} show={show} isMobile={isMobile}/>)
+      }
+    }
+    return(
+      <React.Fragment>
+        {contextState(this.props.text1, this.props.toggleContext, this.props.toggleLang, this.props.text2, this.props.text3,this.props.showMobileVer, this.props.show, this.props.lang, this.props.isMobile)}
+      </React.Fragment>
     )
   }
 }
@@ -127,6 +156,8 @@ class App extends Component {
     this.state = {
       lang: 'es',
       show: 'about',
+      isMobile: window.innerWidth <= 660,
+      showMobile: 'menu',
       menu: menuText.language.find(e => (e.lang === 'es')),
       aboutMe: aboutMeText.language.find(e => (e.lang === 'es')),
       myWork: myWork.language.find(e => (e.lang === 'es'))
@@ -141,6 +172,14 @@ class App extends Component {
       });
     }
   }
+  componentDidMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+  handleWindowSizeChange = () => {
+    this.setState({ 
+      isMobile: window.innerWidth <= 660 
+    });
+  }
   toggleContext = (i) => {
     this.setState({
       show: i
@@ -151,20 +190,32 @@ class App extends Component {
       lang: i
     })
   }
+  handleMobileVer(isMobile){
+    if (isMobile) {
+      return(
+        <React.Fragment>
+          <ContextMobile text1={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} text2={this.state.aboutMe} text3={this.state.myWork} showMobileVer={this.state.showMobile} show={this.state.show} lang={this.state.lang} isMobile={this.state.isMobile}/>
+        </React.Fragment>
+      )
+    } else {
+      return(
+        <React.Fragment>
+          <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
+          <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
+        </React.Fragment>
+      )
+    }
+  }
   render(){
     return(
       <React.Fragment>
         <Helmet>
           <html lang={this.state.lang} />
         </Helmet>
-        <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
-        <Context text1={this.state.aboutMe} text2={this.state.myWork} show={this.state.show}/>
-        {/*<BrowserView>
-          
-        </BrowserView>
-        <MobileView>
-          <h1> This is rendered only on mobile </h1>
-        </MobileView>*/}
+        <div id='contentBox'>
+          {this.handleMobileVer(this.state.isMobile)}
+        </div>
+        <Appversion/>
       </React.Fragment>
     )
   }

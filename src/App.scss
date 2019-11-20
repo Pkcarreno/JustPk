@@ -43,8 +43,32 @@ $color:(
 );
 $fontSize: 18px;
 $fontExpansionSize: 1.2vw;
+$fontExpansionSizeY: 2vh;
+$phoneSSize: 361px;
+$phoneSSizeH: 481px;
+$phoneMSize: 660px;
 @function color($color_name) {
   @return map-get($color, $color_name)
+}
+@mixin small{
+    @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH) {
+        @content;
+    }
+}
+@mixin medium{
+    @media screen and (max-width: $phoneSSize) and (min-height: $phoneSSizeH) {
+        @content;
+    }
+}
+@mixin large{
+    @media screen and (max-width: $phoneMSize) and (min-width: $phoneSSize) {
+        @content;
+    }
+}
+@mixin allSize{
+    @media screen and (max-width: $phoneMSize) {
+        @content;
+    }
 }
 
 *{
@@ -52,7 +76,7 @@ $fontExpansionSize: 1.2vw;
     margin: 0;
     color: color(primary);
 }
-html, body, #root, #context{
+html, body, #root,#contentBox, #context{
     height: 100%;
 }
 body{
@@ -65,9 +89,13 @@ body{
     padding-bottom: 24px;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
+}
+#contentBox{
+    box-sizing: border-box;
+    display: flex;
     flex-direction: row;
 }
-
 a{
     color: color(links);
     transition: 0.2s;
@@ -178,9 +206,28 @@ a{
         height: 100%;
         display: flex;
         align-items: center;
+        overflow: hidden;
+        @include small {
+            overflow: auto;
+        }
+        @include medium {
+            overflow: auto;
+        }
+        @include large {
+            overflow: auto;
+        }
         p{
             font-size: calc(#{$fontSize} + #{$fontExpansionSize});
             line-height: calc((#{$fontSize}/4) + #{$fontExpansionSize}*6);
+            @include small {
+                line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*4) + (#{$fontExpansionSizeY}/2)));
+            }
+            @include medium {
+                line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*4) + (#{$fontExpansionSizeY})));
+            }
+            @include large {
+                line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*6) + (#{$fontExpansionSizeY}*1.1)));
+            }
             #name{
                 font-size: calc((#{$fontSize}*2) + #{$fontExpansionSize});
                 font-weight: bold;
@@ -204,6 +251,10 @@ a{
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
+        @include allSize {
+            margin-top: 0;
+            justify-content: center;
+        }
         #workBox{
             flex: 0.5 0 auto;
             width: 14.5em;
@@ -249,6 +300,20 @@ a{
                 padding-bottom: 8px;
                 text-align: right;
             }
+        }
+    }
+    .button{
+        display: block;
+        background-color: transparent; /* cambiar */
+        border: none;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        margin-left: -16px;
+        margin-top: 12%;
+        transition: 0.2s;
+        svg{
+            height: 53px;
         }
     }
 }
