@@ -265,7 +265,8 @@ a{
             margin-right: 80px;
             img{
                 width: 100%;
-                margin-bottom: 12px;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
             }
             span{
                 background-color: white;
@@ -285,6 +286,7 @@ a{
             }
             #workTitle{
                 margin-bottom: 12px;
+                margin-top: 12px;
                 font-size: 1.5em;
                 span{
                     &::after, &::before{

@@ -4,7 +4,6 @@ import packageJson from '../package.json';
 import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
-import image1 from './Assets/Image/justpk4.png';
 import {Helmet} from 'react-helmet';
 
 class Appversion extends Component {
@@ -76,11 +75,24 @@ class AboutMe extends Component {
 
 class MyWorks extends Component {
   render(){
+    function imageAvailable(image) {
+      try {
+        if(image.substring(0,4) === 'http') {
+          return(
+            <img async id='workImage' src={image}></img>
+          )
+        } else {
+          console.log(image.substring(0,4),'nope')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
     return(
       <React.Fragment>
         {this.props.text2.card.map(e => 
           <div id='workBox'>
-          <img id='workImage' src={image1}></img>
+          {imageAvailable(e.image)}
           <p id='workTitle'><span>{e.title}</span></p>
           <p id='workDescription'><span>{e.description}</span></p>
           <a href={e.link}>{e.direction}</a>

@@ -8,7 +8,8 @@
                     "description": "Este proyecto esta hecho con React.js como demostracón de mis habilidades en dicho entorno.",
                     "date": "Noviembre 2019",
                     "link": "https://github.com/Pkcarreno/JustPk",
-                    "direction":"Github"
+                    "direction":"Github",
+                    "image": "https://repository-images.githubusercontent.com/181414689/8550aa00-7dcb-11e9-9f17-812ce0aea972"
                 }
             ]
         },
@@ -20,7 +21,8 @@
                     "description": "This project was made in React.js as a demostration of my skills in that framework.",
                     "date": "November 2019",
                     "link": "https://github.com/Pkcarreno/JustPk",
-                    "direction":"Github"
+                    "direction":"Github",
+                    "image": ""
                 }
             ]
         }
