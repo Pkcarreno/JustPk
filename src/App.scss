@@ -92,8 +92,7 @@ body{
     flex-direction: column;
 }
 .animationInOut{
-    animation: mount 0.5s ease-in;
-    animation-direction: alternate;
+    animation: mount 0.3s ease-in;
 }
 #contentBox{
     box-sizing: border-box;
