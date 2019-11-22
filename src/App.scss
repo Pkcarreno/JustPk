@@ -91,6 +91,10 @@ body{
     display: flex;
     flex-direction: column;
 }
+.animationInOut{
+    animation: mount 0.5s ease-in;
+    animation-direction: alternate;
+}
 #contentBox{
     box-sizing: border-box;
     display: flex;
@@ -369,5 +373,14 @@ a{
     align-items: flex-end;
     p{
         color: color(versionBox);
+    }
+}
+
+@keyframes mount{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

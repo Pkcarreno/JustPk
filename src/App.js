@@ -83,7 +83,7 @@ class Menu extends Component {
 class AboutMe extends Component {
   render(){
     return(
-      <div id='aboutMeDescription'>
+      <div className='animationInOut' id='aboutMeDescription'>
         <p>{this.props.text1.text1}<span id='name'>{this.props.text1.name}</span>{this.props.text1.text2}<br/>{this.props.text1.text3}<span id='career'>{this.props.text1.text4}</span>{this.props.text1.text5}<br />{this.props.text1.text6}<u>{this.props.text1.text7}</u>{this.props.text1.text8}<u>{this.props.text1.text9}</u>{this.props.text1.text10}<u>{this.props.text1.text11}</u>{this.props.text1.text12}<span id='extra'>{this.props.text1.text13}</span></p>
       </div>
     )
@@ -145,7 +145,7 @@ class Context extends Component {
       if (show === 'work') {
         return(
           <React.Fragment>
-            <div id='myWorkRoot'>
+            <div className='animationInOut' id='myWorkRoot'>
               <MyWorks text2={text2}/>
             </div>
           </React.Fragment>
@@ -189,11 +189,7 @@ class App extends Component {
       showMobile: 'menu',
       menu: menuText.language.find(e => (e.lang === 'es')),
       aboutMe: aboutMeText.language.find(e => (e.lang === 'es')),
-      myWork: myWork.language.find(e => (e.lang === 'es')),
-      style: {
-        opacity: 0,
-        transition: 'all 1s ease',
-      }
+      myWork: myWork.language.find(e => (e.lang === 'es'))
     };
   }
 
@@ -214,32 +210,13 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
-  componentWillReceiveProps(newProps) { 
-    if(!newProps.mounted)
-      return this.unMountStyle()
-  }
   handleWindowSizeChange = () => {
     this.setState({ 
       isMobile: window.innerWidth <= 660 
     });
   }
-  unMountStyle() { //css for unmount animation
-    this.setState({
-      style: {
-        opacity: 0,
-        transition: 'all 1s ease',
-      }
-    })
-  }
-  mountStyle() { // css for mount animation
-    this.setState({
-      style: {
-        opacity: 1,
-        transition: 'all 1s ease',
-      }
-    })
-  }
   toggleContext = (i) => {
+    setTimeout(() => {}, 700);
     this.setState({
       show: i
     })
@@ -254,7 +231,7 @@ class App extends Component {
       showMobile: i
     })
   }
-  handleMobileVer(isMobile){
+  handleMobileVer(isMobile=false){
     if (isMobile) {
       return(
         <React.Fragment>
