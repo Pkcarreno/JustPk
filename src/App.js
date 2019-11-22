@@ -5,6 +5,8 @@ import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
 import {Helmet} from 'react-helmet';
+import curriculumEs from './Assets/Curriculum/curriculumEs.pdf';
+import curriculumEn from './Assets/Curriculum/curriculumEn.pdf';
 
 class Appversion extends Component {
   render(){
@@ -73,7 +75,7 @@ class Menu extends Component {
             {/*<a href=''>Freelancer</a>*/}
           </div>
           <a className='separator' href='mailto:scenic.pk@gmail.com'>scenic.pk@gmail.com</a>
-          <p>{this.props.text.curriculum1} <a href=''>{this.props.text.curriculum2}</a></p>
+          <p>{this.props.text.curriculum1} <a href={this.props.lang === 'es'? curriculumEs:curriculumEn} download='Pedro Carreno curriculum.pdf'>{this.props.text.curriculum2}</a></p>
         </div>
       </div>
     )
@@ -92,11 +94,11 @@ class AboutMe extends Component {
 
 class MyWorks extends Component {
   render(){
-    function imageAvailable(image) {
+    function imageAvailable(image, alt) {
       try {
         if(image.substring(0,4) === 'http') {
           return(
-            <img async id='workImage' src={image}></img>
+            <img async id='workImage' alt={alt} src={image}></img>
           )
         } else {
           console.log(image.substring(0,4),'nope')
@@ -109,7 +111,7 @@ class MyWorks extends Component {
       <React.Fragment>
         {this.props.text2.card.map(e => 
           <div id='workBox'>
-          {imageAvailable(e.image)}
+          {imageAvailable(e.image, e.alt)}
           <p id='workTitle'><span>{e.title}</span></p>
           <p id='workDescription'><span>{e.description}</span></p>
           <a href={e.link}>{e.direction}</a>
@@ -183,13 +185,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lang: 'es',
+      lang: (navigator.language || navigator.userLanguage) === 'es' ? 'es':'en',
       show: 'about',
       isMobile: window.innerWidth <= 660,
       showMobile: 'menu',
-      menu: menuText.language.find(e => (e.lang === 'es')),
-      aboutMe: aboutMeText.language.find(e => (e.lang === 'es')),
-      myWork: myWork.language.find(e => (e.lang === 'es'))
+      menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage) === 'es' ? 'es':'en'))),
+      aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage) === 'es' ? 'es':'en'))),
+      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage) === 'es' ? 'es':'en')))
     };
   }
 

@@ -93,6 +93,7 @@ body{
 }
 .animationInOut{
     animation: mount 0.3s ease-in;
+    animation-direction: alternate;
 }
 #contentBox{
     box-sizing: border-box;
@@ -360,6 +361,9 @@ a{
         margin-left: -16px;
         margin-top: 12%;
         transition: 0.2s;
+        @include small {
+            margin-top: 20px;
+        }
         svg{
             height: 53px;
         }
