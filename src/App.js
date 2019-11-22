@@ -22,12 +22,29 @@ class Menu extends Component {
     const workButton = (this.props.show === 'work' ? 'active':'buttonEffect');
     const enButton = (this.props.lang === 'en' ? 'on':'button2Effect');
     const esButton = (this.props.lang === 'es' ? 'on':'button2Effect');
+
+    function toggleButtons(toggleContext,button1,button2,isMobile=false,toggleMobile) {
+      if (isMobile) {
+        return(
+          <React.Fragment>
+            <button className={'button '} onClick={(e => {toggleContext('about'); toggleMobile('context');}) }>{button1}</button>
+            <button className={'button '} onClick={e => {toggleContext('work'); toggleMobile('context');} }>{button2}</button>
+          </React.Fragment>
+        )
+      } else {
+        return(
+          <React.Fragment>
+            <button className={'button '+ aboutButton} onClick={e => {toggleContext('about')}}>{button1}</button>
+            <button className={'button '+ workButton} onClick={e => {toggleContext('work')}}>{button2}</button>
+          </React.Fragment>
+        )
+      }
+    }
     return(
       <div id='menuDeskt'>
         <p id='logo'>Pk</p>
         <div>
-          <button className={'button '+ aboutButton} onClick={e => {this.props.toggleContext('about')}}>{this.props.text.button1}</button>
-          <button className={'button '+ workButton} onClick={e => {this.props.toggleContext('work')}}>{this.props.text.button2}</button>
+          {toggleButtons(this.props.toggleContext,this.props.text.button1,this.props.text.button2,this.props.isMobile,this.props.toggleMobile)}
         </div>
   
         <div id='language'>
@@ -106,18 +123,18 @@ class MyWorks extends Component {
 
 class Context extends Component {
   render(){
-    function goBackIcon(isMobile){
+    function goBackIcon(isMobile=false, toggle){
       if (isMobile) {
         return(
           <React.Fragment>
-            <button className='button'>
+            <button className='button' onClick={e => { toggle('menu')}}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
             </button>
           </React.Fragment>
         )
       }
     }
-    function contextState(text1, text2, show, isMobile){
+    function contextState(text1, text2, show){
       if (show === 'about') {
         return(
           <React.Fragment>
@@ -137,7 +154,7 @@ class Context extends Component {
     }
     return(
       <div id='context'>
-        {goBackIcon(this.props.isMobile)}
+        {goBackIcon(this.props.isMobile, this.props.toggleMobile)}
         {contextState(this.props.text1,this.props.text2,this.props.show)}
       </div>
     )
@@ -146,17 +163,17 @@ class Context extends Component {
 
 class ContextMobile extends Component {
   render(){
-    function contextState(text1, toggleContext, toggleLang, text2, text3, showMobileVer, show, lang , isMobile){
+    function contextState(text1, toggleContext, toggleLang, text2, text3, showMobileVer, show, lang , isMobile, toggleMobile){
       if (showMobileVer === 'menu') {
-        return(<Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile}/>)
+        return(<Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>)
       }
       if (showMobileVer === 'context') {
-        return(<Context text1={text2} text2={text3} show={show} isMobile={isMobile}/>)
+        return(<Context text1={text2} text2={text3} show={show} isMobile={isMobile} toggleMobile={toggleMobile}/>)
       }
     }
     return(
       <React.Fragment>
-        {contextState(this.props.text1, this.props.toggleContext, this.props.toggleLang, this.props.text2, this.props.text3,this.props.showMobileVer, this.props.show, this.props.lang, this.props.isMobile)}
+        {contextState(this.props.text1, this.props.toggleContext, this.props.toggleLang, this.props.text2, this.props.text3,this.props.showMobileVer, this.props.show, this.props.lang, this.props.isMobile, this.props.toggleMobile)}
       </React.Fragment>
     )
   }
@@ -183,6 +200,11 @@ class App extends Component {
         myWork: myWork.language.find(e => (e.lang === this.state.lang))
       });
     }
+    if (prevState.isMobile === true & this.state.isMobile === false) {
+      this.setState({
+        showMobile: 'menu'
+      });
+    }
   }
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
@@ -202,11 +224,16 @@ class App extends Component {
       lang: i
     })
   }
+  toggleMobile = (i) => {
+    this.setState({
+      showMobile: i
+    })
+  }
   handleMobileVer(isMobile){
     if (isMobile) {
       return(
         <React.Fragment>
-          <ContextMobile text1={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} text2={this.state.aboutMe} text3={this.state.myWork} showMobileVer={this.state.showMobile} show={this.state.show} lang={this.state.lang} isMobile={this.state.isMobile}/>
+          <ContextMobile text1={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} text2={this.state.aboutMe} text3={this.state.myWork} showMobileVer={this.state.showMobile} show={this.state.show} lang={this.state.lang} isMobile={this.state.isMobile} toggleMobile={this.toggleMobile}/>
         </React.Fragment>
       )
     } else {
