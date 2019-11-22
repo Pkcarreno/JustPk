@@ -110,16 +110,35 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include allSize {
+        flex-basis: 100%;
+    }
     #logo{
         color: color(accent);
         font-size: 4em;
         font-family: 'Montserrat',Fallback;
         margin-left: 49px;
         margin-top: 50px;
+        @include allSize {
+            font-size: 6em;
+            @include small {
+                font-size: 4em;
+            }
+        }
     }
     .primerDiv{
         display: flex;
         flex-direction: column;
+    }
+    #contextButton{
+        @include allSize {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 25%;
+        }
     }
     .button{
         display: block;
@@ -141,6 +160,17 @@ a{
         color: white;
         background-color: black;
         pointer-events: none;
+    }
+    .mobileButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 50%;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+
     }
     #language{
         margin-left: 64px;
@@ -172,6 +202,9 @@ a{
     }
     #rrss{
         margin-bottom: 20px;
+        @include small {
+            margin-bottom: 10px;
+        }
         a{
             margin-right: 9px;
             svg{
@@ -190,6 +223,9 @@ a{
     }
     .separator{
         margin-bottom: 20px;
+        @include small {
+            margin-bottom: 10px;
+        }
     }
     #freelancing{
         a{
@@ -220,12 +256,15 @@ a{
             font-size: calc(#{$fontSize} + #{$fontExpansionSize});
             line-height: calc((#{$fontSize}/4) + #{$fontExpansionSize}*6);
             @include small {
+                padding-top: 10px;
                 line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*4) + (#{$fontExpansionSizeY}/2)));
             }
             @include medium {
+                padding-top: 10px;
                 line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*4) + (#{$fontExpansionSizeY})));
             }
             @include large {
+                padding-top: 10px;
                 line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*6) + (#{$fontExpansionSizeY}*1.1)));
             }
             #name{
@@ -254,6 +293,7 @@ a{
         @include allSize {
             margin-top: 0;
             justify-content: center;
+            align-items: center;
         }
         #workBox{
             flex: 0.5 0 auto;
@@ -263,6 +303,9 @@ a{
             border-radius: 5px;
             margin-bottom: 80px;
             margin-right: 80px;
+            @include allSize {
+                margin-right: 0;
+            }
             img{
                 width: 100%;
                 border-top-left-radius: 3px;

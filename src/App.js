@@ -27,8 +27,8 @@ class Menu extends Component {
       if (isMobile) {
         return(
           <React.Fragment>
-            <button className={'button '} onClick={(e => {toggleContext('about'); toggleMobile('context');}) }>{button1}</button>
-            <button className={'button '} onClick={e => {toggleContext('work'); toggleMobile('context');} }>{button2}</button>
+            <button className={'button mobileButton'} onClick={(e => {toggleContext('about'); toggleMobile('context');}) }>{button1}</button>
+            <button className={'button mobileButton'} onClick={e => {toggleContext('work'); toggleMobile('context');} }>{button2}</button>
           </React.Fragment>
         )
       } else {
@@ -43,7 +43,7 @@ class Menu extends Component {
     return(
       <div id='menuDeskt'>
         <p id='logo'>Pk</p>
-        <div>
+        <div id='contextButton'>
           {toggleButtons(this.props.toggleContext,this.props.text.button1,this.props.text.button2,this.props.isMobile,this.props.toggleMobile)}
         </div>
   
