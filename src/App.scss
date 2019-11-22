@@ -125,8 +125,12 @@ a{
         margin-top: 50px;
         @include allSize {
             font-size: 6em;
+            @include medium {
+                margin-top: 20px;
+            }
             @include small {
                 font-size: 4em;
+                margin-top: 20px;
             }
         }
     }
@@ -154,6 +158,9 @@ a{
         font-size: 1.5em;
         margin-bottom: 1em;
         transition: 0.2s;
+        @include small {
+            margin-bottom: 10px;
+        }
     }
     .buttonEffect{
         &:focus, &:hover{
