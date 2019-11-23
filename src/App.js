@@ -185,13 +185,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lang: (navigator.language || navigator.userLanguage).substring(0,1) === 'es' ? 'es':'en',
+      lang: (navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en',
       show: 'about',
       isMobile: window.innerWidth <= 660,
       showMobile: 'menu',
-      menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,1) === 'es' ? 'es':'en'))),
-      aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,1) === 'es' ? 'es':'en'))),
-      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,1) === 'es' ? 'es':'en')))
+      menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
+      aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
+      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en')))
     };
   }
 
