@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import packageJson from '../../package.json';
 
+// Return the app version indicate inside the package.json
+
 class Appversion extends Component {
   render(){
     return(

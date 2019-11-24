@@ -1,7 +1,7 @@
 // React
 import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
-// Assets
+// Assets - styles / text in Json files
 import './App.scss';
 import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
@@ -25,6 +25,7 @@ class App extends Component {
       myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en')))
     };
   }
+  // handle states
   componentDidUpdate(prevProps, prevState) {
     if (prevState.lang !== this.state.lang) {
       this.setState({
@@ -62,6 +63,7 @@ class App extends Component {
       showMobile: i
     })
   }
+  // End handle states
   //handle view
   selectContext = (text1, text2, show) => {
     if (show === 'about') {
@@ -127,6 +129,7 @@ class App extends Component {
       )
     }
   }
+  // End handle view
   render(){
     return(
       <React.Fragment>
