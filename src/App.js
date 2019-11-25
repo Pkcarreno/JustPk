@@ -25,7 +25,7 @@ class App extends Component {
       myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en')))
     };
   }
-  // handle states
+  // handle states functions
   componentDidUpdate(prevProps, prevState) {
     if (prevState.lang !== this.state.lang) {
       this.setState({
@@ -64,7 +64,7 @@ class App extends Component {
     })
   }
   // End handle states
-  //handle view
+  //handle view functions
   selectContext = (text1, text2, show) => {
     if (show === 'about') {
       return(
