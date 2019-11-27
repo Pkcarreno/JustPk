@@ -158,8 +158,15 @@ a{
         font-size: 1.5em;
         margin-bottom: 1em;
         transition: 0.2s;
-        @include small {
-            margin-bottom: 10px;
+        @include allSize {
+            font-size: 2em;
+                @include small {
+                    font-size: 1.5em;
+                    margin-bottom: 10px;
+                }
+                @include medium {
+                    font-size: 1.5em;
+                }
         }
     }
     .buttonEffect{
@@ -177,16 +184,16 @@ a{
         justify-content: center;
         align-items: center;
         width: 80%;
-        height: 50%;
+        line-height: 1.5em;
         background-color: black;
         color: white;
         border-radius: 5px;
 
     }
     #language{
-        margin-left: 64px;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         .button2{
             border: none;
             background-color: transparent;
@@ -199,6 +206,12 @@ a{
             font-size: 1em;
             color: color(links);
             transition: 0.2s;
+            @include allSize {
+                font-size: 1.2em;
+                @include small {
+                    font-size: 1em;
+                }
+            }
         }
         .button2Effect{
             &:hover{
