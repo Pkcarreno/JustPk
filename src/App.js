@@ -90,7 +90,6 @@ class App extends Component {
           {this.selectContext(this.state.aboutMe, this.state.myWork, this.state.show)}
           <button className='button animationInOut' onClick={ e => { this.toggleMobile('menu')}}>
             {menuText.back}
-      {/*<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>*/}
           </button>
         </div>
       )
@@ -104,7 +103,11 @@ class App extends Component {
   }
   contextMobileState = (text1, toggleContext, toggleLang, text2, text3, showMobileVer, show, lang , isMobile, toggleMobile) => {
     if (showMobileVer === 'menu') {
-      return(<Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>)
+      return(
+        <React.Fragment>
+          <Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>
+        </React.Fragment>
+      )
     }
     if (showMobileVer === 'context') {
       return(

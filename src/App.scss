@@ -41,15 +41,15 @@ $color:(
   links: #999999,
   versionBox: #444444
 );
+@function color($color_name) {
+  @return map-get($color, $color_name)
+}
 $fontSize: 18px;
 $fontExpansionSize: 1.2vw;
 $fontExpansionSizeY: 2vh;
 $phoneSSize: 361px;
 $phoneSSizeH: 481px;
 $phoneMSize: 660px;
-@function color($color_name) {
-  @return map-get($color, $color_name)
-}
 @mixin small{
     @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH) {
         @content;
@@ -289,7 +289,7 @@ a{
                     font-size: 1.2em;
                 }
                 #extra{
-                    font-size: 1em;
+                    font-size: 0.8em;
                 }
             }
             @include medium {
