@@ -249,6 +249,9 @@ a{
     display: flex;
     flex-direction: column;
     padding-left: 16px;
+    @include allSize {
+        padding-left: 0;
+    }
     #aboutMeDescription{
         height: 100%;
         display: flex;
@@ -360,20 +363,22 @@ a{
     }
     .button{
         display: block;
-        background-color: transparent; /* cambiar */
-        border: none;
+        background-color: transparent;
+        border: black solid 3px;
+        border-radius: 5px;
         padding: 0;
         text-align: left;
-        text-decoration: none;
-        margin-left: -16px;
-        margin-top: 12%;
         transition: 0.2s;
-        @include small {
-            margin-top: 20px;
-        }
+        margin-bottom: 4px;
         svg{
             height: 53px;
         }
+
+        font-size: 1.5em;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        line-height: 1.5em;
     }
 }
 #versionBox{

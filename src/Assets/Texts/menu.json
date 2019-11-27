@@ -5,14 +5,16 @@
             "button1": "Sobre mi",
             "button2": "Mis trabajos",
             "curriculum1": "Descargar",
-            "curriculum2": "mi curriculum como PDF"
+            "curriculum2": "mi curriculum como PDF",
+            "back": "Volver al Menu"
         },
         {
             "lang":"en",
             "button1": "About me",
             "button2": "My works",
             "curriculum1": "Download",
-            "curriculum2": "mi curriculum as PDF"
+            "curriculum2": "mi curriculum as PDF",
+            "back": "Back to Menu"
         }
     ]
 }
