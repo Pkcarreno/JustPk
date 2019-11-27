@@ -257,30 +257,12 @@ a{
         display: flex;
         align-items: center;
         overflow: hidden;
-        @include small {
-            overflow: auto;
-        }
-        @include medium {
-            overflow: auto;
-        }
-        @include large {
+        @include allSize() {
             overflow: auto;
         }
         p{
             font-size: calc(#{$fontSize} + #{$fontExpansionSize});
             line-height: calc((#{$fontSize}/4) + #{$fontExpansionSize}*6);
-            @include small {
-                padding-top: 10px;
-                line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*4) + (#{$fontExpansionSizeY}/2)));
-            }
-            @include medium {
-                padding-top: 10px;
-                line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*4) + (#{$fontExpansionSizeY})));
-            }
-            @include large {
-                padding-top: 10px;
-                line-height: calc((#{$fontSize}/4) + ((#{$fontExpansionSize}*6) + (#{$fontExpansionSizeY}*1.1)));
-            }
             #name{
                 font-size: calc((#{$fontSize}*2) + #{$fontExpansionSize});
                 font-weight: bold;
@@ -293,6 +275,47 @@ a{
             }
             #extra{
                 font-size: calc((#{$fontSize}*0.47) + #{$fontExpansionSize});
+            }
+            @include allSize {
+                text-align: justify;
+                line-height: auto;
+            }
+            @include small {
+                font-size: 1em;
+                #name{
+                    font-size: 1.5em;
+                }
+                #career{
+                    font-size: 1.2em;
+                }
+                #extra{
+                    font-size: 1em;
+                }
+            }
+            @include medium {
+                font-size: 1.5em;
+                #name{
+                    font-size: 1.7em;
+                }
+                #career{
+                    font-size: 1.4em;
+                }
+                #extra{
+                    font-size: 0.8em;
+                }
+            }
+            @include large {
+                font-size: 1.6em;
+                line-height: 1.5em;
+                #name{
+                    font-size: 1.6em;
+                }
+                #career{
+                    font-size: 1.5em;
+                }
+                #extra{
+                    font-size: 0.8em;
+                }
             }
         }
     }
@@ -369,11 +392,8 @@ a{
         padding: 0;
         text-align: left;
         transition: 0.2s;
+        margin-top: 2px;
         margin-bottom: 4px;
-        svg{
-            height: 53px;
-        }
-
         font-size: 1.5em;
         font-weight: bold;
         color: black;
