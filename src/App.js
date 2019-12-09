@@ -18,7 +18,7 @@ class App extends Component {
     this.state = {
       lang: (navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en',
       show: 'about',
-      isMobile: window.innerWidth <= 660,
+      isMobile: (window.innerWidth <= 660) || (window.matchMedia("(orientation: landscape) and (max-height: 660px)").matches),
       showMobile: 'menu',
       menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
       aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
@@ -45,7 +45,7 @@ class App extends Component {
   }
   handleWindowSizeChange = () => {
     this.setState({ 
-      isMobile: window.innerWidth <= 660 
+      isMobile: (window.innerWidth <= 660) || (window.matchMedia("(orientation: landscape) and (max-height: 660px)").matches)
     });
   }
   toggleContext = (i) => {

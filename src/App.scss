@@ -49,22 +49,27 @@ $phoneSSizeH: 481px;
 $phoneMSize: 660px;
 // Mobile querys
 @mixin small{
-    @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH) {
+    @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH), (orientation: landscape) and (max-width: $phoneSSizeH) and (max-height: $phoneSSize) {
         @content;
     }
 }
 @mixin medium{
-    @media screen and (max-width: $phoneSSize) and (min-height: $phoneSSizeH) {
+    @media screen and (max-width: $phoneSSize) and (min-height: $phoneSSizeH), (orientation: landscape) and (max-width: $phoneSSizeH) and (min-height: $phoneSSize) {
         @content;
     }
 }
 @mixin large{
-    @media screen and (max-width: $phoneMSize) and (min-width: $phoneSSize) {
+    @media screen and (max-width: $phoneMSize) and (min-width: $phoneSSize), (orientation: landscape) and (max-width: $phoneSSize) and (min-width: $phoneMSize) {
         @content;
     }
 }
 @mixin allSize{
-    @media screen and (max-width: $phoneMSize) {
+    @media screen and (max-width: $phoneMSize), (orientation: landscape) and (max-height: $phoneMSize) {
+        @content;
+    }
+}
+@mixin landscape{
+    @media screen and (orientation: landscape) and (max-height: $phoneMSize) {
         @content;
     }
 }
@@ -140,12 +145,20 @@ a{
     @include allSize {
         flex-basis: 100%;
     }
+    @include landscape {
+        flex-direction: row;
+        align-items: center;
+    }
     #logo{
         color: color(accent);
         font-size: 4em;
         font-family: 'Montserrat',Fallback;
         margin-left: 49px;
         margin-top: 50px;
+        @include landscape {
+            margin: 0;
+            align-self: flex-start;
+        }
         @include allSize {
             font-size: 6em;
             @include medium {
@@ -157,9 +170,13 @@ a{
             }
         }
     }
-    .primerDiv{
+    .links{
         display: flex;
         flex-direction: column;
+        @include landscape {
+            height: 100%;
+            justify-content: space-around;
+        }
     }
     #contextButton{
         @include allSize {
@@ -169,6 +186,10 @@ a{
             align-items: center;
             width: 100%;
             height: 25%;
+        }
+        @include landscape {
+            height: 100%;
+            max-width: 250px;
         }
     }
     .button{
@@ -218,8 +239,16 @@ a{
         flex-direction: row;
         justify-content: center;
         max-width: 240px;
+        @include landscape {
+            flex-direction: column;
+            align-self: center;
+            padding-top: 80px;
+        }
         @include allSize{
             max-width: none;
+        }
+        p {
+            align-self: center;
         }
         .button2{
             border: none;
@@ -256,6 +285,9 @@ a{
         @include small {
             margin-bottom: 10px;
         }
+        @include landscape {
+            text-align: right;
+        }
         a{
             margin-right: 9px;
             svg{
@@ -277,10 +309,22 @@ a{
         @include small {
             margin-bottom: 10px;
         }
+        @include landscape {
+            text-align: right;
+        }
     }
     #freelancing{
         a{
             margin-right: 18px;
+            @include landscape {
+                margin-right: 0;
+                margin-left: 18px;
+            }
+        }
+    }
+    p {
+        @include landscape {
+            text-align: right;
         }
     }
 }
