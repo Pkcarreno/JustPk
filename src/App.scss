@@ -44,12 +44,10 @@ $color:(
 @function color($color_name) {
   @return map-get($color, $color_name)
 }
-$fontSize: 18px;
-$fontExpansionSize: 1.2vw;
-$fontExpansionSizeY: 2vh;
 $phoneSSize: 361px;
 $phoneSSizeH: 481px;
 $phoneMSize: 660px;
+// Mobile querys
 @mixin small{
     @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH) {
         @content;
@@ -70,6 +68,26 @@ $phoneMSize: 660px;
         @content;
     }
 }
+// Fonts value
+$fontSize: 1.5em;
+$fontExpansionSize: 2.5em;
+// Desktop querys
+@mixin mediumDPI{
+    @media screen and (min-width: 1280px) and (min-height: 800px){
+        @content;
+    }
+}
+@mixin highDPI{
+    @media screen and (min-width: 1440px) and (min-height: 900px){
+        @content;
+    }
+}
+@mixin topDPI{
+    @media screen and (min-width: 1500px) {
+        @content;
+    }
+}
+
 
 *{
     font-family: 'Inconsolata', Fallback;
@@ -83,6 +101,7 @@ body{
     margin-left: 16px;
     margin-right: 16px;
     overflow: hidden;
+    min-width: 300px;
 }
 #root{
     padding-top: 16px;
@@ -90,6 +109,9 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    @include topDPI {
+        align-items: center;
+    }
 }
 .animationInOut{
     animation: mount 0.3s ease-in;
@@ -99,6 +121,7 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    max-width: 1500px;
 }
 a{
     color: color(links);
@@ -194,6 +217,10 @@ a{
         display: flex;
         flex-direction: row;
         justify-content: center;
+        max-width: 240px;
+        @include allSize{
+            max-width: none;
+        }
         .button2{
             border: none;
             background-color: transparent;
@@ -262,6 +289,10 @@ a{
     display: flex;
     flex-direction: column;
     padding-left: 16px;
+    max-width: 960px;
+    @include topDPI {
+        width: 960px;
+    }
     @include allSize {
         padding-left: 0;
     }
@@ -269,25 +300,37 @@ a{
         height: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
         overflow: hidden;
         @include allSize() {
             overflow: auto;
         }
         p{
-            font-size: calc(#{$fontSize} + #{$fontExpansionSize});
-            line-height: calc((#{$fontSize}/4) + #{$fontExpansionSize}*6);
+            font-size: $fontSize;
+            line-height: $fontExpansionSize;
+            max-width: 700px;
+            @include mediumDPI {
+                font-size: 2em;
+                line-height: 3em;
+                max-width: 990px;
+            }
+            @include highDPI {
+                font-size: 2.2em;
+                line-height: 3.5em;
+                max-width: 1100px;
+            }
             #name{
-                font-size: calc((#{$fontSize}*2) + #{$fontExpansionSize});
+                font-size: 1.5em;
                 font-weight: bold;
                 color: color(accent);
             }
             #career{
-                font-size: calc((#{$fontSize}*1.3) + #{$fontExpansionSize});
+                font-size: 1.5em;
                 font-weight: bold;
                 color: color(accent);
             }
             #extra{
-                font-size: calc((#{$fontSize}*0.47) + #{$fontExpansionSize});
+                font-size: .7em;
             }
             @include allSize {
                 text-align: justify;
@@ -418,7 +461,7 @@ a{
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-self: flex-end;
     p{
         color: color(versionBox);
     }
