@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://pkcarreno.github.io/JustPk/",
   "dependencies": {
+    "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
