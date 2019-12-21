@@ -47,29 +47,30 @@ $color:(
 $phoneSSize: 361px;
 $phoneSSizeH: 481px;
 $phoneMSize: 660px;
+$phoneLandscapeH: 550px;
 // Mobile querys
 @mixin small{
-    @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH), (orientation: landscape) and (max-width: $phoneSSizeH) and (max-height: $phoneSSize) {
+    @media screen and (max-width: $phoneSSize) and (max-height: $phoneSSizeH), (orientation: landscape) and (max-height: $phoneLandscapeH) {
         @content;
     }
 }
 @mixin medium{
-    @media screen and (max-width: $phoneSSize) and (min-height: $phoneSSizeH), (orientation: landscape) and (max-width: $phoneSSizeH) and (min-height: $phoneSSize) {
+    @media screen and (max-width: $phoneSSize) and (min-height: $phoneSSizeH), (orientation: landscape) and (max-height: $phoneLandscapeH) {
         @content;
     }
 }
 @mixin large{
-    @media screen and (max-width: $phoneMSize) and (min-width: $phoneSSize), (orientation: landscape) and (max-width: $phoneSSize) and (min-width: $phoneMSize) {
+    @media screen and (max-width: $phoneMSize) and (min-width: $phoneSSize), (orientation: landscape) and (max-height: $phoneLandscapeH) {
         @content;
     }
 }
 @mixin allSize{
-    @media screen and (max-width: $phoneMSize), (orientation: landscape) and (max-width: $phoneMSize) {
+    @media screen and (max-width: $phoneMSize), (orientation: landscape) and (max-height: $phoneLandscapeH) {
         @content;
     }
 }
 @mixin landscape{
-    @media screen and (orientation: landscape) and (max-width: $phoneMSize) {
+    @media screen and (orientation: landscape) and (max-height: $phoneLandscapeH) {
         @content;
     }
 }
