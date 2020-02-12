@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
 // Assets - styles / text in Json files
 import './App.scss';
+import {themes} from './Assets/Themes/themes.json'
 import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
@@ -22,7 +23,9 @@ class App extends Component {
       showMobile: 'menu',
       menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
       aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
-      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en')))
+      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0, 2) === 'es' ? 'es' : 'en'))),
+      currentTheme: Math.floor(Math.random() * Math.floor(Object.keys(themes).length)).toString(),
+      themes: themes
     };
   }
   // handle states functions
@@ -39,9 +42,13 @@ class App extends Component {
         showMobile: 'menu'
       });
     }
+    if (this.state.currentTheme != prevState.currentTheme) {
+      this.setTheme();
+    }
   }
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
+    this.setTheme();
   }
   handleWindowSizeChange = () => {
     this.setState({ 
@@ -62,6 +69,24 @@ class App extends Component {
     this.setState({
       showMobile: i
     })
+  }
+  setTheme = () => {
+    const theme = this.state.themes[this.state.currentTheme]
+    Object.keys(theme).forEach((key) => {
+      const cssKey = '--' + key 
+      const cssValue = theme[key]
+      document.body.style.setProperty(cssKey, cssValue)
+    })
+  }
+  toggleTheme = () => {
+    function getRandomInt(max) {
+      return (Math.floor(Math.random() * Math.floor(max)));
+    }
+    let num
+    do {
+      num = getRandomInt(Object.keys(themes).length).toString()
+    } while (num == this.state.currentTheme);
+    this.setState({ currentTheme: num })
   }
   // End handle states
   //handle view functions
@@ -105,7 +130,7 @@ class App extends Component {
     if (showMobileVer === 'menu') {
       return(
         <React.Fragment>
-          <Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>
+          <Menu text={text1} toggleTheme={this.toggleTheme} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>
         </React.Fragment>
       )
     }
@@ -121,13 +146,13 @@ class App extends Component {
     if (isMobile) {
       return(
         <React.Fragment>
-          {this.contextMobileState(this.state.menu, this.toggleContext, this.toggleLang, this.state.aboutMe, this.state.myWork,this.state.showMobile, this.state.show, this.state.lang, this.state.isMobile, this.toggleMobile)}
+          {this.contextMobileState(this.state.menu, this.toggleContext, this.toggleLang, this.state.aboutMe, this.state.myWork,this.state.showMobile, this.state.show, this.state.lang, this.state.isMobile, this.toggleMobile, this.toggleTheme)}
         </React.Fragment>
       )
     } else {
       return(
         <React.Fragment>
-          <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
+          <Menu text={this.state.menu} toggleTheme={this.toggleTheme} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
           {this.appContext(this.state.isMobile)}
         </React.Fragment>
       )
@@ -135,10 +160,13 @@ class App extends Component {
   }
   // End handle view
   render(){
+    const bg_color = this.state.themes[this.state.currentTheme]["bg"];
     return(
       <React.Fragment>
         <Helmet>
           <html lang={this.state.lang} />
+          <meta name="msapplication-TileColor" content={bg_color}/>
+          <meta name="theme-color" content={bg_color}/>
         </Helmet>
         <div id='contentBox'>
           {this.handleMobileVer(this.state.isMobile)}

@@ -29,7 +29,7 @@ class Menu extends Component {
       }
       return(
         <div id='menuDeskt'>
-          <p id='logo'>Pk</p>
+          <p onClick={ e => {this.props.toggleTheme()} } id='logo'>Pk</p>
           <div id='contextButton'>
             {toggleButtons(this.props.toggleContext,this.props.text.button1,this.props.text.button2,this.props.isMobile,this.props.toggleMobile)}
           </div>
