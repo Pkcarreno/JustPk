@@ -24,7 +24,7 @@ class App extends Component {
       menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
       aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
       myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0, 2) === 'es' ? 'es' : 'en'))),
-      currentTheme: '2',
+      currentTheme: Math.floor(Math.random() * Math.floor(Object.keys(themes).length)).toString(),
       themes: themes
     };
   }
@@ -79,11 +79,14 @@ class App extends Component {
     })
   }
   toggleTheme = () => {
-    if (this.state.currentTheme == '0'){
-      this.setState({ currentTheme: '1' })
-    } else {
-      this.setState({ currentTheme: '0' })
+    function getRandomInt(max) {
+      return (Math.floor(Math.random() * Math.floor(max)));
     }
+    let num
+    do {
+      num = getRandomInt(Object.keys(themes).length).toString()
+    } while (num == this.state.currentTheme);
+    this.setState({ currentTheme: num })
   }
   // End handle states
   //handle view functions
