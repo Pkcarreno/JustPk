@@ -461,6 +461,7 @@ a{
                 margin-bottom: 12px;
                 margin-top: 12px;
                 font-size: 1.5em;
+                font-weight: bold;
                 span{
                     &::after, &::before{
                         content:'-';
@@ -474,6 +475,7 @@ a{
             #workDate{
                 padding-bottom: 8px;
                 text-align: right;
+                font-weight: bold;
             }
         }
     }

@@ -160,7 +160,7 @@ class App extends Component {
   }
   // End handle view
   render(){
-    const bg_color = this.state.themes[this.state.currentTheme]["bg"];
+    const bg_color = this.state.themes[this.state.currentTheme]["accent"];
     return(
       <React.Fragment>
         <Helmet>

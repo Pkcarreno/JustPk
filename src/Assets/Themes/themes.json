@@ -9,19 +9,19 @@
             "bg": "#ffffff"
         },
         "1": {
-            "accent": "#e309ad",
+            "accent": "#F235D3",
             "primary": "#dddddd",
             "links": "#bbbbbb",
             "versionBox": "#cccccc",
-            "bg-contrast": "#ffe66b",
-            "bg": "#4311ff"
+            "bg-contrast": "#F4D64E",
+            "bg": "#0D05F2"
         },
         "2": {
-            "accent": "#609071",
+            "accent": "#C55F36",
             "primary": "#222222",
             "links": "#999999",
             "versionBox": "#444444",
-            "bg-contrast": "#C55F36",
+            "bg-contrast": "#609071",
             "bg": "#FFFEC9"
         }
     }
