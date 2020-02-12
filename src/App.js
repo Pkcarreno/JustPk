@@ -127,7 +127,7 @@ class App extends Component {
     if (showMobileVer === 'menu') {
       return(
         <React.Fragment>
-          <Menu text={text1} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>
+          <Menu text={text1} toggleTheme={this.toggleTheme} toggleContext={toggleContext} toggleLang={toggleLang} show={show} lang={lang} isMobile={isMobile} toggleMobile={toggleMobile}/>
         </React.Fragment>
       )
     }
@@ -143,7 +143,7 @@ class App extends Component {
     if (isMobile) {
       return(
         <React.Fragment>
-          {this.contextMobileState(this.state.menu, this.toggleContext, this.toggleLang, this.state.aboutMe, this.state.myWork,this.state.showMobile, this.state.show, this.state.lang, this.state.isMobile, this.toggleMobile)}
+          {this.contextMobileState(this.state.menu, this.toggleContext, this.toggleLang, this.state.aboutMe, this.state.myWork,this.state.showMobile, this.state.show, this.state.lang, this.state.isMobile, this.toggleMobile, this.toggleTheme)}
         </React.Fragment>
       )
     } else {
@@ -157,11 +157,13 @@ class App extends Component {
   }
   // End handle view
   render(){
-    console.log(this.state.themes[this.state.currentTheme])
+    const bg_color = this.state.themes[this.state.currentTheme]["bg"];
     return(
       <React.Fragment>
         <Helmet>
           <html lang={this.state.lang} />
+          <meta name="msapplication-TileColor" content={bg_color}/>
+          <meta name="theme-color" content={bg_color}/>
         </Helmet>
         <div id='contentBox'>
           {this.handleMobileVer(this.state.isMobile)}

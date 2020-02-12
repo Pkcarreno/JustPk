@@ -35,9 +35,6 @@ src: local('Montserrat Bold'), local('Montserrat-Bold'),
         url('./Assets/fonts/Montserrat/montserrat-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-@function color($color_name) {
-  @return map-get($color, $color_name)
-}
 $phoneSSize: 361px;
 $phoneSSizeH: 481px;
 $phoneMSize: 660px;
