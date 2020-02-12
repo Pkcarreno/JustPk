@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
 // Assets - styles / text in Json files
 import './App.scss';
+import {themes} from './Assets/Themes/themes.json'
 import menuText from './Assets/Texts/menu.json';
 import aboutMeText from './Assets/Texts/aboutMe.json';
 import myWork from './Assets/Texts/myWorks.json';
@@ -22,7 +23,9 @@ class App extends Component {
       showMobile: 'menu',
       menu: menuText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
       aboutMe: aboutMeText.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en'))),
-      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0,2) === 'es' ? 'es':'en')))
+      myWork: myWork.language.find(e => (e.lang === ((navigator.language || navigator.userLanguage).substring(0, 2) === 'es' ? 'es' : 'en'))),
+      currentTheme: '2',
+      themes: themes
     };
   }
   // handle states functions
@@ -39,9 +42,13 @@ class App extends Component {
         showMobile: 'menu'
       });
     }
+    if (this.state.currentTheme != prevState.currentTheme) {
+      this.setTheme();
+    }
   }
   componentDidMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
+    this.setTheme();
   }
   handleWindowSizeChange = () => {
     this.setState({ 
@@ -62,6 +69,21 @@ class App extends Component {
     this.setState({
       showMobile: i
     })
+  }
+  setTheme = () => {
+    const theme = this.state.themes[this.state.currentTheme]
+    Object.keys(theme).forEach((key) => {
+      const cssKey = '--' + key 
+      const cssValue = theme[key]
+      document.body.style.setProperty(cssKey, cssValue)
+    })
+  }
+  toggleTheme = () => {
+    if (this.state.currentTheme == '0'){
+      this.setState({ currentTheme: '1' })
+    } else {
+      this.setState({ currentTheme: '0' })
+    }
   }
   // End handle states
   //handle view functions
@@ -127,7 +149,7 @@ class App extends Component {
     } else {
       return(
         <React.Fragment>
-          <Menu text={this.state.menu} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
+          <Menu text={this.state.menu} toggleTheme={this.toggleTheme} toggleContext={this.toggleContext} toggleLang={this.toggleLang} show={this.state.show} lang={this.state.lang}/>
           {this.appContext(this.state.isMobile)}
         </React.Fragment>
       )
@@ -135,6 +157,7 @@ class App extends Component {
   }
   // End handle view
   render(){
+    console.log(this.state.themes[this.state.currentTheme])
     return(
       <React.Fragment>
         <Helmet>

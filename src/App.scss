@@ -35,34 +35,6 @@ src: local('Montserrat Bold'), local('Montserrat-Bold'),
         url('./Assets/fonts/Montserrat/montserrat-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-$accent: #ffe66b;
-$primary: #222222;
-$links: #999999;
-$versionBox: #444444;
-$bg-contrast: black;
-$bg: white;
-/*
-default
-$color:(
-  accent: #ffe66b,
-  primary: #222222,
-  links: #999999,
-  versionBox: #444444,
-  black: black,
-  bg: white
-);
-
-$color:(
-  accent: #e309ad,
-  primary: #dddddd,
-  links: #bbbbbb,
-  versionBox: #cccccc,
-  bg-contrast: #ffe66b,
-  bg: #4311ff
-);
-
-*/
-
 @function color($color_name) {
   @return map-get($color, $color_name)
 }
@@ -120,11 +92,11 @@ $fontExpansionSize: 2.5em;
 *{
     font-family: 'Inconsolata', Fallback;
     margin: 0;
-    color: $primary;
+    color: var(--primary);
 }
 html, body, #root,#contentBox, #context{
     height: 100%;
-    background-color: $bg;
+    background-color: var(--bg);
 }
 body{
     margin-left: 16px;
@@ -153,10 +125,10 @@ body{
     max-width: 1500px;
 }
 a{
-    color: $links;
+    color: var(--links);
     transition: 0.2s;
     &:hover{
-        color: $primary;
+        color: var(--primary);
     }
 }
 #menuDeskt{
@@ -174,7 +146,7 @@ a{
         align-items: center;
     }
     #logo{
-        color: $accent;
+        color: var(--accent);
         font-size: 4em;
         font-family: 'Montserrat',Fallback;
         margin-left: 49px;
@@ -239,12 +211,12 @@ a{
     }
     .buttonEffect{
         &:focus, &:hover{
-            background-color: $accent;
+            background-color: var(--accent);
         }
     }
     .active{       //button enfasis
-        color: $bg;
-        background-color: $bg-contrast;
+        color: var(--bg);
+        background-color: var(--bg-contrast);
         pointer-events: none;
     }
     .mobileButton{
@@ -253,8 +225,8 @@ a{
         align-items: center;
         width: 80%;
         line-height: 1.5em;
-        background-color: $bg-contrast;
-        color: $bg;
+        background-color: var(--bg-contrast);
+        color: var(--bg);
         border-radius: 5px;
 
     }
@@ -284,7 +256,7 @@ a{
             text-decoration: underline;
             display: inline;
             font-size: 1em;
-            color: $links;
+            color: var(--links);
             transition: 0.2s;
             @include allSize {
                 font-size: 1.2em;
@@ -295,11 +267,11 @@ a{
         }
         .button2Effect{
             &:hover{
-                color: $primary;
+                color: var(--primary);
             }
         }
         .on{       //button enfasis
-            color: $bg-contrast;
+            color: var(--bg-contrast);
             text-decoration: none;
             pointer-events: none;
         }
@@ -317,12 +289,12 @@ a{
             svg{
                 height: 39px;
                 path{
-                    color: $versionBox;
+                    color: var(--versionBox);
                     transition: 0.1s;
                 }
                 &:hover{
                     path{
-                        color: $accent;
+                        color: var(--accent);
                     }
                 }
             }
@@ -390,12 +362,12 @@ a{
             #name{
                 font-size: 1.5em;
                 font-weight: bold;
-                color: $accent;
+                color: var(--accent);
             }
             #career{
                 font-size: 1.5em;
                 font-weight: bold;
-                color: $accent;
+                color: var(--accent);
             }
             #extra{
                 font-size: .7em;
@@ -460,7 +432,7 @@ a{
             flex: 0.5 0 auto;
             width: 14.5em;
             height: fit-content;
-            background-color: $bg-contrast;
+            background-color: var(--bg-contrast);
             border-radius: 5px;
             margin-bottom: 80px;
             margin-right: 80px;
@@ -473,15 +445,15 @@ a{
                 border-top-right-radius: 3px;
             }
             span{
-                background-color: $bg;
-                color: $primary;
+                background-color: var(--bg);
+                color: var(--primary);
             }
             a{
-                background-color: $accent;
-                color: $primary;
+                background-color: var(--accent);
+                color: var(--primary);
                 font-weight: bold;
                 &:hover{
-                    background-color: $bg;
+                    background-color: var(--bg);
                 }
             }
             p, a{
@@ -511,7 +483,7 @@ a{
     .button{
         display: block;
         background-color: transparent;
-        border: $bg-contrast solid 3px;
+        border: var(--bg-contrast) solid 3px;
         border-radius: 5px;
         padding: 0;
         text-align: left;
@@ -531,7 +503,7 @@ a{
     justify-content: flex-end;
     align-self: flex-end;
     p{
-        color: $versionBox;
+        color: var(--versionBox);
     }
 }
 
