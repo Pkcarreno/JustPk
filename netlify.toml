@@ -1,4 +1,9 @@
 [build]
-  command = "npm run build"
-  publish="justpk/build"
-  base = "justpk/"
+    command = "npm run build"
+    publish="justpk/build"
+    base = "justpk/"
+
+[[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
