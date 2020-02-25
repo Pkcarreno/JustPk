@@ -2,7 +2,7 @@
   "name": "justpk",
   "version": "4.3.1",
   "private": true,
-  "homepage": "https://pkcarreno.netlify.com/",
+  "homepage": "pkcarreno.netlify.com/",
   "dependencies": {
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
